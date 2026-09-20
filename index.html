@@ -210,13 +210,6 @@
 
     text-align:left;
 
-    /*
-      moon.jpgをHero全体の背景として使用。
-
-      画像そのものが横長画像の場合でも
-      coverでHero全体に合わせて表示する。
-    */
-
     background:
       linear-gradient(
         90deg,
@@ -1209,6 +1202,21 @@
   }
 
 
+  .cal-hours-note{
+    margin-top:22px;
+
+    padding-top:20px;
+
+    border-top:1px solid var(--line);
+
+    color:var(--moon-500);
+
+    font-size:12px;
+
+    line-height:1.9;
+  }
+
+
   @media (max-width:600px){
 
     .cal-card{
@@ -1329,13 +1337,8 @@
 
 
   /* ========================================
-     FOOTER / INSTAGRAM
+     INSTAGRAM
   ======================================== */
-
-  footer{
-    padding:70px 0 calc(60px + env(safe-area-inset-bottom,0px));
-  }
-
 
   .insta-card{
     display:flex;
@@ -1346,7 +1349,7 @@
 
     flex-wrap:wrap;
 
-    gap:20px;
+    gap:24px;
 
     background:var(--night-850);
 
@@ -1358,7 +1361,50 @@
   }
 
 
-  .insta-card a{
+  .insta-info{
+    flex:1;
+
+    min-width:240px;
+  }
+
+
+  .insta-info .section-label{
+    margin-bottom:10px;
+  }
+
+
+  .insta-title{
+    font-family:var(--serif);
+
+    font-size:clamp(20px,3vw,28px);
+
+    font-weight:600;
+
+    color:var(--moon-100);
+
+    line-height:1.5;
+  }
+
+
+  .insta-account{
+    flex:none;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+  }
+
+
+  .insta-account a{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    min-height:48px;
+
     text-decoration:none;
 
     color:var(--gold-400);
@@ -1369,23 +1415,35 @@
 
     border:1px solid var(--gold-400);
 
-    padding:12px 26px;
+    padding:11px 26px;
 
     border-radius:2px;
 
-    transition:.2s;
+    transition:
+      background .2s,
+      color .2s;
   }
 
 
-  .insta-card a:hover{
+  .insta-account a:hover{
     background:var(--gold-400);
 
     color:var(--night-950);
   }
 
 
+
+  /* ========================================
+     FOOTER
+  ======================================== */
+
+  footer{
+    padding:70px 0 calc(60px + env(safe-area-inset-bottom,0px));
+  }
+
+
   .foot-meta{
-    margin-top:40px;
+    margin-top:0;
 
     color:var(--moon-500);
 
@@ -1502,6 +1560,27 @@
 
     .insta-card{
       padding:26px;
+
+      flex-direction:column;
+
+      align-items:stretch;
+
+      gap:22px;
+    }
+
+
+    .insta-info{
+      min-width:0;
+    }
+
+
+    .insta-account{
+      justify-content:flex-start;
+    }
+
+
+    .insta-account a{
+      width:100%;
     }
 
   }
@@ -1543,12 +1622,12 @@
         ご利用の流れ
       </a>
 
-      <a href="#instagram">
-        Instagram
-      </a>
-
       <a href="#faq">
         よくある質問
+      </a>
+
+      <a href="#instagram">
+        Instagram
       </a>
 
     </nav>
@@ -1995,6 +2074,40 @@
 
 
 
+      <div class="cal-hours-note">
+
+        <div>
+          日：20:00〜3:00
+        </div>
+
+        <div>
+          月：23:00〜3:00
+        </div>
+
+        <div>
+          火：23:00〜3:00
+        </div>
+
+        <div>
+          水：21:00〜3:00
+        </div>
+
+        <div>
+          木：23:00〜3:00
+        </div>
+
+        <div>
+          金：23:00〜3:00
+        </div>
+
+        <div>
+          土：10:00〜3:00
+        </div>
+
+      </div>
+
+
+
       <div
         id="ownerPanel"
         class="owner-panel"
@@ -2054,23 +2167,39 @@
 (function(){
 
 
-  const TIME_SLOTS = [
+  /*
+   * 曜日ごとの予約可能時間
+   *
+   * 0 = 日曜日
+   * 1 = 月曜日
+   * 2 = 火曜日
+   * 3 = 水曜日
+   * 4 = 木曜日
+   * 5 = 金曜日
+   * 6 = 土曜日
+   *
+   * 30分刻みで表示。
+   *
+   * 例：
+   * 日曜日 → 20:00 ～ 3:00
+   * 月曜日 → 23:00 ～ 3:00
+   * 土曜日 → 10:00 ～ 3:00
+   */
 
-    "22:00",
-    "22:30",
-    "23:00",
-    "23:30",
-    "0:00",
-    "0:30",
-    "1:00",
-    "1:30",
-    "2:00",
-    "2:30",
-    "3:00",
-    "3:30",
-    "4:00"
+  const DAY_START_HOURS = {
 
-  ];
+    0: 20,
+    1: 23,
+    2: 23,
+    3: 21,
+    4: 23,
+    5: 23,
+    6: 10
+
+  };
+
+
+  const END_HOUR = 3;
 
 
   const BUFFER_STEPS = 2;
@@ -2223,6 +2352,69 @@
   }
 
 
+  /*
+   * 指定した曜日の予約可能時間を
+   * 30分刻みで作成する。
+   *
+   * 0:00〜3:00は、日付をまたいだ後の時間。
+   * カレンダー上では「選択した日の営業時間」として表示する。
+   */
+
+  function getTimeSlots(d){
+
+    const startHour =
+      DAY_START_HOURS[
+        d.getDay()
+      ];
+
+
+    const slots = [];
+
+
+    let currentMinutes =
+      startHour * 60;
+
+
+    const endMinutes =
+      (END_HOUR + 24) * 60;
+
+
+    while(
+      currentMinutes <= endMinutes
+    ){
+
+      const displayMinutes =
+        currentMinutes % (24 * 60);
+
+
+      const hour =
+        Math.floor(
+          displayMinutes / 60
+        );
+
+
+      const minute =
+        displayMinutes % 60;
+
+
+      slots.push(
+        String(hour)
+          + ':'
+          + String(minute)
+              .padStart(2,'0')
+      );
+
+
+      currentMinutes += 30;
+
+    }
+
+
+    return slots;
+
+  }
+
+
   let selectedKey =
     fmtKey(
       dateList[0]
@@ -2230,6 +2422,32 @@
 
 
   let isOwner = false;
+
+
+  function getSelectedDate(){
+
+    for(
+      let i = 0;
+      i < dateList.length;
+      i++
+    ){
+
+      if(
+        fmtKey(
+          dateList[i]
+        ) === selectedKey
+      ){
+
+        return dateList[i];
+
+      }
+
+    }
+
+
+    return dateList[0];
+
+  }
 
 
   function statusFor(
@@ -2337,6 +2555,16 @@
   function renderSlots(){
 
     slotsEl.innerHTML = '';
+
+
+    const selectedDate =
+      getSelectedDate();
+
+
+    const TIME_SLOTS =
+      getTimeSlots(
+        selectedDate
+      );
 
 
     TIME_SLOTS.forEach(
@@ -2644,174 +2872,6 @@
 
 
 <!-- ========================================
-     RESERVATION
-======================================== -->
-
-<section id="reserve">
-
-  <div class="wrap">
-
-
-    <div class="section-head reserve-head">
-
-
-      <div class="section-label">
-        RESERVATION
-      </div>
-
-
-      <h2>
-        ご予約フォーム
-      </h2>
-
-
-      <p class="lead">
-
-        下のフォームより必要事項をご入力ください。
-        送信いただいた内容は仮予約となります。
-        折り返し確定のご連絡をお送りしますので、
-        今しばらくお待ちください。
-
-      </p>
-
-    </div>
-
-
-
-    <div class="form-card reserve-card">
-
-
-      <div class="policy-box">
-
-
-        <ul class="policy-list">
-
-
-          <li>
-
-            ご予約はメールでの確定連絡をもって成立となります。
-            仮予約の時点ではお時間を確保するものではございません。
-
-          </li>
-
-
-          <li>
-
-            キャンセルは確定後、前日までにご連絡ください。
-            当日キャンセルは施術料金の50%、
-            無断キャンセルは全額を申し受けます。
-
-          </li>
-
-
-          <li>
-
-            ご希望のお日にちが既にご予約で埋まっている場合は、
-            確定連絡にて別日時をご相談させていただきます。
-
-          </li>
-
-
-          <li>
-
-            マッサージ以外の性的サービスは一切行っておりません。
-            あらかじめご了承ください。
-
-          </li>
-
-
-          <li>
-
-            飲酒後の施術、体調不良時のご予約は
-            ご遠慮いただく場合がございます。
-
-          </li>
-
-
-        </ul>
-
-      </div>
-
-
-
-      <p class="form-note reserve-note">
-
-        フォーム内の同意チェックボックスに
-        ご同意のうえ、送信してください。
-
-      </p>
-
-
-
-      <a
-        class="btn-submit reserve-link"
-        href="https://docs.google.com/forms/d/e/1FAIpQLScaEPoEdjxMcgMiMxHJOM1qKQa_nMTDBpPdrzluFurevzZZXg/viewform"
-        target="_blank"
-        rel="noopener"
-      >
-
-        予約フォームを開く（Googleフォーム）
-
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- ========================================
-     INSTAGRAM
-======================================== -->
-
-<section id="instagram">
-
-  <div class="wrap">
-
-
-    <div class="insta-card">
-
-
-      <div>
-
-
-        <div class="section-label">
-          INSTAGRAM
-        </div>
-
-
-        <h2 style="margin-top:10px;">
-
-          日々の空き状況・お知らせはこちらから
-
-        </h2>
-
-      </div>
-
-
-
-      <a
-        href="https://www.instagram.com/yumeya_relax"
-        target="_blank"
-        rel="noopener"
-      >
-
-        @yumeya_relax
-
-      </a>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- ========================================
      FAQ
 ======================================== -->
 
@@ -2933,6 +2993,177 @@
       ご予約フォームの備考欄よりお気軽にお問い合わせください。
 
     </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     INSTAGRAM
+======================================== -->
+
+<section id="instagram">
+
+  <div class="wrap">
+
+
+    <div class="insta-card">
+
+
+      <div class="insta-info">
+
+        <div class="section-label">
+          INSTAGRAM
+        </div>
+
+
+        <h2 class="insta-title">
+
+          日々の空き状況・お知らせはこちらから
+
+        </h2>
+
+      </div>
+
+
+
+      <div class="insta-account">
+
+        <a
+          href="https://www.instagram.com/yumeya_relax"
+          target="_blank"
+          rel="noopener"
+        >
+
+          @yumeya_relax
+
+        </a>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     RESERVATION
+======================================== -->
+
+<section id="reserve">
+
+  <div class="wrap">
+
+
+    <div class="section-head reserve-head">
+
+
+      <div class="section-label">
+        RESERVATION
+      </div>
+
+
+      <h2>
+        ご予約フォーム
+      </h2>
+
+
+      <p class="lead">
+
+        下のフォームより必要事項をご入力ください。
+        送信いただいた内容は仮予約となります。
+        折り返し確定のご連絡をお送りしますので、
+        今しばらくお待ちください。
+
+      </p>
+
+    </div>
+
+
+
+    <div class="form-card reserve-card">
+
+
+      <div class="policy-box">
+
+
+        <ul class="policy-list">
+
+
+          <li>
+
+            ご予約はメールでの確定連絡をもって成立となります。
+            仮予約の時点ではお時間を確保するものではございません。
+
+          </li>
+
+
+          <li>
+
+            キャンセルは確定後、前日までにご連絡ください。
+            当日キャンセルは施術料金の50%、
+            無断キャンセルは全額を申し受けます。
+
+          </li>
+
+
+          <li>
+
+            ご希望のお日にちが既にご予約で埋まっている場合は、
+            確定連絡にて別日時をご相談させていただきます。
+
+          </li>
+
+
+          <li>
+
+            マッサージ以外の性的サービスは一切行っておりません。
+            あらかじめご了承ください。
+
+          </li>
+
+
+          <li>
+
+            飲酒後の施術、体調不良時のご予約は
+            ご遠慮いただく場合がございます。
+
+          </li>
+
+
+        </ul>
+
+      </div>
+
+
+
+      <p class="form-note reserve-note">
+
+        フォーム内の同意チェックボックスに
+        ご同意のうえ、送信してください。
+
+      </p>
+
+
+
+      <a
+        class="btn-submit reserve-link"
+        href="https://docs.google.com/forms/d/e/1FAIpQLScaEPoEdjxMcgMiMxHJOM1qKQa_nMTDBpPdrzluFurevzZZXg/viewform"
+        target="_blank"
+        rel="noopener"
+      >
+
+        予約フォームを開く（Googleフォーム）
+
+      </a>
+
+    </div>
 
   </div>
 
