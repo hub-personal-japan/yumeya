@@ -3,27 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
 <title>夢夜 -yumeya- | 深夜専門 出張ボディケア</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+  rel="stylesheet"
+>
 
 <style>
+
   :root{
     --night-950:#0a0817;
     --night-900:#130f24;
     --night-850:#191331;
     --night-800:#241c47;
     --line:#332a5c;
+
     --moon-100:#f3f0fb;
     --moon-300:#cdc3e8;
     --moon-500:#9c8fc4;
+
     --gold-400:#c9a66b;
     --gold-300:#dcc08e;
+
     --serif:'Shippori Mincho', serif;
     --sans:'Zen Kaku Gothic New', sans-serif;
   }
+
 
   *{
     box-sizing:border-box;
@@ -31,10 +41,12 @@
     padding:0;
   }
 
+
   html{
     scroll-behavior:smooth;
     scroll-padding-top:calc(72px + env(safe-area-inset-top, 0px));
   }
+
 
   body{
     background:var(--night-950);
@@ -42,25 +54,31 @@
     font-family:var(--sans);
     line-height:1.85;
     -webkit-font-smoothing:antialiased;
+
     padding-top:env(safe-area-inset-top, 0px);
     padding-bottom:env(safe-area-inset-bottom, 0px);
+
     overflow-x:hidden;
   }
+
 
   a{
     color:inherit;
   }
+
 
   img,
   svg{
     max-width:100%;
   }
 
+
   .wrap{
     max-width:920px;
     margin:0 auto;
     padding:0 24px;
   }
+
 
 
   /* ========================================
@@ -71,77 +89,109 @@
     position:sticky;
     top:0;
     z-index:50;
+
     padding-top:env(safe-area-inset-top, 0px);
+
     background:rgba(10,8,23,0.82);
+
     backdrop-filter:blur(10px);
+
     border-bottom:1px solid var(--line);
   }
+
 
   .nav-inner{
     max-width:920px;
     margin:0 auto;
+
     padding:16px 24px;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
   }
+
 
   .brand{
     font-family:var(--serif);
     font-size:20px;
     letter-spacing:.08em;
     font-weight:600;
+
     color:var(--moon-100);
+
     text-decoration:none;
   }
 
+
   .brand span{
     color:var(--gold-400);
+
     font-size:12px;
     letter-spacing:.2em;
+
     display:block;
+
     font-family:var(--sans);
     font-weight:400;
+
     margin-top:2px;
   }
+
 
   nav.links{
     display:flex;
     gap:28px;
+
     font-size:14px;
   }
 
+
   nav.links a{
     text-decoration:none;
+
     color:var(--moon-300);
+
     transition:color .25s;
   }
+
 
   nav.links a:hover{
     color:var(--moon-100);
   }
 
+
   .nav-cta{
     background:var(--gold-400);
     color:var(--night-950);
+
     padding:9px 20px;
+
     border-radius:2px;
+
     font-size:13px;
     text-decoration:none;
     font-weight:700;
+
     letter-spacing:.04em;
+
     transition:background .25s;
   }
+
 
   .nav-cta:hover{
     background:var(--gold-300);
   }
 
+
   @media (max-width:680px){
+
     nav.links{
       display:none;
     }
+
   }
+
 
 
   /* ========================================
@@ -150,145 +200,179 @@
 
   .hero{
     position:relative;
-    padding:100px 24px 120px;
+
+    min-height:600px;
+
+    padding:110px 24px 120px;
+
+    display:flex;
+    align-items:center;
+
     text-align:left;
+
+    /*
+      moon.jpgをHero全体の背景として使用。
+
+      画像そのものが
+      1024 × 572
+      の横長画像なので、
+      月だけを別画像として配置せず、
+      Hero全体にcoverで敷く。
+    */
+
     background:
-      radial-gradient(
-        ellipse 700px 500px at 85% -10%,
-        rgba(155,120,220,0.22),
-        transparent 60%
-      ),
-      radial-gradient(
-        ellipse 500px 400px at 10% 110%,
-        rgba(80,60,140,0.25),
-        transparent 60%
+      linear-gradient(
+        90deg,
+        rgba(10,8,23,.94) 0%,
+        rgba(10,8,23,.82) 28%,
+        rgba(10,8,23,.50) 55%,
+        rgba(10,8,23,.18) 78%,
+        rgba(10,8,23,.30) 100%
       ),
       linear-gradient(
         180deg,
-        var(--night-950),
-        var(--night-900)
-      );
+        rgba(10,8,23,.20),
+        rgba(10,8,23,.48)
+      ),
+      url("moon.jpg");
+
+    background-size:
+      cover,
+      cover,
+      cover;
+
+    background-position:
+      center,
+      center,
+      center center;
+
+    background-repeat:
+      no-repeat,
+      no-repeat,
+      no-repeat;
+
     overflow:hidden;
   }
 
 
-  /* --- 月画像 --- */
-
-  .moon-wrap{
-    position:absolute;
-    right:-90px;
-    top:-70px;
-    width:clamp(380px, 48vw, 620px);
-    pointer-events:none;
-    animation:glow 8s ease-in-out infinite;
-  }
-
-  .moon-img{
-    width:100%;
-    height:auto;
-    display:block;
-
-    filter:
-      drop-shadow(0 0 45px rgba(230,220,255,.28))
-      drop-shadow(0 0 100px rgba(150,120,220,.20));
-  }
-
-  @keyframes glow{
-    0%,100%{
-      opacity:.94;
-      transform:scale(1);
-    }
-
-    50%{
-      opacity:1;
-      transform:scale(1.025);
-    }
-  }
-
-  @media (prefers-reduced-motion:reduce){
-    .moon-wrap{
-      animation:none;
-    }
-  }
-
-  @media (max-width:680px){
-    .moon-wrap{
-      top:-45px;
-      right:-125px;
-      width:480px;
-      opacity:.72;
-    }
-  }
-
-
   .hero-inner{
+    width:100%;
     max-width:920px;
+
     margin:0 auto;
+
     position:relative;
     z-index:2;
   }
 
+
   .eyebrow{
     color:var(--gold-400);
+
     font-size:13px;
     letter-spacing:.15em;
+
     margin-bottom:22px;
   }
 
+
   h1.headline{
     font-family:var(--serif);
+
     font-weight:700;
+
     font-size:clamp(34px,6vw,58px);
+
     color:var(--moon-100);
+
     letter-spacing:.03em;
+
     line-height:1.5;
+
     max-width:11ch;
+
+    text-shadow:
+      0 2px 20px rgba(0,0,0,.45);
   }
+
 
   .hero-sub{
     margin-top:26px;
+
     color:var(--moon-300);
+
     font-size:16px;
+
     max-width:36ch;
+
+    text-shadow:
+      0 1px 10px rgba(0,0,0,.5);
   }
+
 
   .hero-ctas{
     margin-top:44px;
+
     display:flex;
     gap:16px;
+
     flex-wrap:wrap;
   }
+
 
   .btn-primary{
     background:var(--gold-400);
     color:var(--night-950);
+
     padding:15px 32px;
+
     border-radius:2px;
+
     text-decoration:none;
+
     font-weight:700;
     font-size:15px;
+
     letter-spacing:.03em;
+
     transition:background .25s;
   }
+
 
   .btn-primary:hover{
     background:var(--gold-300);
   }
 
+
   .btn-ghost{
     border:1px solid var(--line);
+
     color:var(--moon-300);
+
     padding:15px 32px;
+
     border-radius:2px;
+
     text-decoration:none;
+
     font-size:15px;
-    transition:border-color .25s,color .25s;
+
+    background:rgba(10,8,23,.20);
+
+    transition:
+      border-color .25s,
+      color .25s,
+      background .25s;
   }
+
 
   .btn-ghost:hover{
     border-color:var(--moon-500);
     color:var(--moon-100);
+
+    background:rgba(10,8,23,.35);
   }
+
 
 
   /* ========================================
@@ -299,49 +383,84 @@
     padding:96px 0;
   }
 
+
   section + section{
     border-top:1px solid var(--line);
   }
 
+
   .section-head{
     margin-bottom:52px;
+
     max-width:46ch;
   }
 
+
   .section-label{
     color:var(--gold-400);
+
     font-size:13px;
+
     letter-spacing:.15em;
+
     margin-bottom:14px;
   }
 
+
   h2{
     font-family:var(--serif);
+
     font-size:clamp(24px,3.4vw,32px);
+
     font-weight:600;
+
     color:var(--moon-100);
+
     letter-spacing:.02em;
   }
 
+
   .lead{
     color:var(--moon-300);
+
     margin-top:16px;
+
     font-size:15px;
   }
 
 
+
   /* ========================================
-     RESERVATION HEAD
-     予約フォームの説明だけ横幅を広げる
+     AVAILABILITY / RESERVATION HEAD
   ======================================== */
+
+  /*
+    空き状況と予約フォームの説明文は
+    横幅を広げて、途中で不自然に
+    改行されないようにする。
+  */
+
+  .availability-head{
+    max-width:820px;
+  }
+
+
+  .availability-head .lead{
+    max-width:none;
+
+    white-space:normal;
+  }
+
 
   .reserve-head{
     max-width:820px;
   }
 
+
   .reserve-head .lead{
     max-width:none;
   }
+
 
 
   /* ========================================
@@ -350,41 +469,60 @@
 
   .menu-row{
     display:flex;
+
     justify-content:space-between;
     align-items:baseline;
+
     padding:22px 0;
+
     border-bottom:1px solid var(--line);
+
     gap:20px;
   }
+
 
   .menu-row:first-of-type{
     border-top:1px solid var(--line);
   }
 
+
   .menu-name{
     font-family:var(--serif);
+
     font-size:19px;
+
     color:var(--moon-100);
   }
 
+
   .menu-desc{
     color:var(--moon-500);
+
     font-size:13px;
+
     margin-top:6px;
   }
 
+
   .menu-price{
     font-family:var(--serif);
+
     font-size:19px;
+
     color:var(--gold-400);
+
     white-space:nowrap;
   }
 
+
   .menu-note{
     margin-top:28px;
+
     color:var(--moon-500);
+
     font-size:13px;
   }
+
 
 
   /* ========================================
@@ -393,40 +531,59 @@
 
   .flow{
     display:flex;
+
     flex-direction:column;
+
     gap:0;
   }
 
+
   .flow-item{
     display:grid;
+
     grid-template-columns:44px 1fr;
+
     gap:20px;
+
     padding:26px 0;
+
     border-bottom:1px solid var(--line);
+
     position:relative;
   }
+
 
   .flow-item:first-child{
     border-top:1px solid var(--line);
   }
 
+
   .flow-num{
     font-family:var(--serif);
+
     color:var(--gold-400);
+
     font-size:20px;
   }
 
+
   .flow-title{
     font-weight:700;
+
     color:var(--moon-100);
+
     margin-bottom:6px;
+
     font-size:15px;
   }
 
+
   .flow-text{
     color:var(--moon-300);
+
     font-size:14px;
   }
+
 
 
   /* ========================================
@@ -435,55 +592,80 @@
 
   .form-card{
     background:var(--night-850);
+
     border:1px solid var(--line);
+
     border-radius:4px;
+
     padding:40px;
   }
 
+
   @media (max-width:600px){
+
     .form-card{
       padding:26px;
     }
+
   }
+
 
   .reserve-card .policy-box{
     max-height:none;
+
     margin-bottom:20px;
   }
 
+
   .reserve-note{
     margin-bottom:24px;
+
     text-align:center;
   }
 
+
   .reserve-link{
     display:block;
+
     text-align:center;
+
     text-decoration:none;
   }
+
 
   .field{
     margin-bottom:22px;
   }
 
+
   .field label{
     display:block;
+
     font-size:13px;
+
     color:var(--moon-300);
+
     margin-bottom:8px;
+
     letter-spacing:.02em;
   }
 
+
   .req{
     color:var(--gold-400);
+
     margin-left:4px;
   }
 
+
   .opt{
     color:var(--moon-500);
+
     margin-left:6px;
+
     font-size:12px;
   }
+
 
   input[type=text],
   input[type=tel],
@@ -491,208 +673,322 @@
   input[type=date],
   select,
   textarea{
+
     width:100%;
+
     background:var(--night-900);
+
     border:1px solid var(--line);
+
     color:var(--moon-100);
+
     padding:13px 14px;
+
     border-radius:3px;
+
     font-family:var(--sans);
+
     font-size:15px;
+
     transition:border-color .2s;
   }
+
 
   input:focus,
   select:focus,
   textarea:focus{
     outline:none;
+
     border-color:var(--gold-400);
   }
 
+
   textarea{
     resize:vertical;
+
     min-height:80px;
   }
 
+
   .row2{
     display:grid;
+
     grid-template-columns:1fr 1fr;
+
     gap:18px;
   }
 
+
   @media (max-width:560px){
+
     .row2{
       grid-template-columns:1fr;
     }
+
   }
+
 
   fieldset{
     border:1px solid var(--line);
+
     border-radius:3px;
+
     padding:14px 16px;
   }
 
+
   legend{
     padding:0 6px;
+
     font-size:13px;
+
     color:var(--moon-300);
   }
 
+
   .radio-group{
     display:flex;
+
     gap:22px;
+
     flex-wrap:wrap;
+
     padding-top:4px;
   }
 
+
   .radio-group label{
     display:flex;
+
     align-items:center;
+
     gap:8px;
+
     color:var(--moon-100);
+
     font-size:14px;
+
     margin:0;
   }
 
+
   .radio-group input{
     accent-color:var(--gold-400);
+
     width:16px;
     height:16px;
   }
 
+
   .policy-box{
     background:var(--night-900);
+
     border:1px solid var(--line);
+
     border-radius:3px;
+
     padding:20px;
+
     font-size:13px;
+
     color:var(--moon-300);
+
     max-height:180px;
+
     overflow-y:auto;
+
     margin-bottom:18px;
   }
+
 
   .policy-box p{
     margin-bottom:10px;
   }
 
+
   .agree-line{
     display:flex;
+
     align-items:flex-start;
+
     gap:10px;
+
     font-size:14px;
+
     color:var(--moon-100);
   }
 
+
   .agree-line input{
     margin-top:4px;
+
     accent-color:var(--gold-400);
+
     width:17px;
     height:17px;
+
     flex:none;
   }
+
 
   .submit-row{
     margin-top:34px;
   }
 
+
   .btn-submit{
     width:100%;
+
     background:var(--gold-400);
+
     color:var(--night-950);
+
     border:none;
+
     padding:17px;
+
     font-size:16px;
+
     font-weight:700;
+
     border-radius:3px;
+
     cursor:pointer;
+
     letter-spacing:.03em;
+
     transition:background .2s;
+
     font-family:var(--sans);
   }
+
 
   .btn-submit:hover{
     background:var(--gold-300);
   }
 
+
   .btn-submit:disabled{
     opacity:.45;
+
     cursor:not-allowed;
   }
 
+
   .form-note{
     margin-top:14px;
+
     font-size:12px;
+
     color:var(--moon-500);
+
     line-height:1.8;
   }
 
+
   .result-box{
     display:none;
+
     margin-top:26px;
+
     background:var(--night-900);
+
     border:1px solid var(--gold-400);
+
     border-radius:3px;
+
     padding:22px;
   }
+
 
   .result-box.show{
     display:block;
   }
 
+
   .result-box h3{
     font-family:var(--serif);
+
     color:var(--gold-300);
+
     font-size:16px;
+
     margin-bottom:10px;
   }
 
+
   .result-box p{
     font-size:13px;
+
     color:var(--moon-300);
+
     margin-bottom:12px;
   }
 
+
   .result-box textarea{
     background:var(--night-950);
+
     font-size:12px;
+
     color:var(--moon-300);
+
     min-height:170px;
   }
 
+
   .btn-row{
     display:flex;
+
     gap:12px;
+
     margin-top:14px;
+
     flex-wrap:wrap;
   }
 
+
   .btn-small{
     background:transparent;
+
     border:1px solid var(--line);
+
     color:var(--moon-100);
+
     padding:10px 18px;
+
     border-radius:3px;
+
     font-size:13px;
+
     cursor:pointer;
+
     font-family:var(--sans);
+
     transition:border-color .2s;
   }
+
 
   .btn-small:hover{
     border-color:var(--gold-400);
   }
 
+
   .field-error{
     color:#e59a9a;
+
     font-size:12px;
+
     margin-top:6px;
+
     display:none;
   }
+
 
   .field-error.show{
     display:block;
   }
+
 
 
   /* ========================================
@@ -701,21 +997,30 @@
 
   .policy-list{
     color:var(--moon-300);
+
     font-size:14px;
   }
 
+
   .policy-list li{
     margin-bottom:12px;
+
     padding-left:1.2em;
+
     position:relative;
   }
 
+
   .policy-list li::before{
     content:'—';
+
     position:absolute;
+
     left:0;
+
     color:var(--gold-400);
   }
+
 
 
   /* ========================================
@@ -724,138 +1029,209 @@
 
   .cal-card{
     background:var(--night-850);
+
     border:1px solid var(--line);
+
     border-radius:4px;
+
     padding:30px;
   }
 
+
   .cal-dates{
     display:flex;
+
     gap:8px;
+
     overflow-x:auto;
+
     padding-bottom:12px;
+
     scrollbar-width:thin;
   }
 
+
   .cal-date-btn{
     flex:none;
+
     background:transparent;
+
     border:1px solid var(--line);
+
     color:var(--moon-300);
+
     padding:10px 14px;
+
     border-radius:3px;
+
     font-family:var(--sans);
+
     font-size:13px;
+
     cursor:pointer;
   }
 
+
   .cal-date-btn.active{
     background:var(--gold-400);
+
     color:var(--night-950);
+
     border-color:var(--gold-400);
+
     font-weight:700;
   }
 
+
   .cal-legend{
     display:flex;
+
     gap:18px;
+
     flex-wrap:wrap;
+
     margin:22px 0;
+
     color:var(--moon-500);
+
     font-size:12px;
   }
 
+
   .legend-item{
     display:flex;
+
     align-items:center;
+
     gap:6px;
   }
+
 
   .dot{
     width:8px;
     height:8px;
+
     border-radius:50%;
+
     display:inline-block;
   }
+
 
   .dot-open{
     background:#7eb58c;
   }
 
+
   .dot-buffer{
     background:var(--gold-400);
   }
+
 
   .dot-booked{
     background:#9d6670;
   }
 
+
   .cal-slots{
     display:grid;
+
     grid-template-columns:repeat(4,1fr);
+
     gap:8px;
   }
 
+
   .slot-chip{
     padding:11px 6px;
+
     border-radius:3px;
+
     font-family:var(--sans);
+
     font-size:13px;
+
     border:1px solid var(--line);
+
     cursor:default;
   }
 
+
   .slot-open{
     background:rgba(126,181,140,.08);
+
     color:#a8d2b0;
+
     border-color:rgba(126,181,140,.3);
   }
 
+
   .slot-buffer{
     background:rgba(201,166,107,.08);
+
     color:var(--gold-300);
+
     border-color:rgba(201,166,107,.3);
   }
 
+
   .slot-booked{
     background:rgba(157,102,112,.12);
+
     color:#c98d96;
+
     border-color:rgba(157,102,112,.3);
   }
 
+
   .owner-panel{
     margin-top:22px;
+
     padding-top:20px;
+
     border-top:1px solid var(--line);
   }
 
+
   .owner-hint{
     color:var(--moon-500);
+
     font-size:12px;
+
     margin-bottom:12px;
   }
 
+
   .owner-actions{
     display:flex;
+
     align-items:center;
+
     gap:12px;
+
     flex-wrap:wrap;
   }
 
+
   .publish-status{
     color:var(--moon-500);
+
     font-size:12px;
   }
 
+
   @media (max-width:600px){
+
     .cal-card{
       padding:20px;
     }
 
+
     .cal-slots{
       grid-template-columns:repeat(3,1fr);
     }
+
   }
+
 
 
   /* ========================================
@@ -866,40 +1242,64 @@
     padding:70px 0 calc(60px + env(safe-area-inset-bottom,0px));
   }
 
+
   .insta-card{
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     flex-wrap:wrap;
+
     gap:20px;
+
     background:var(--night-850);
+
     border:1px solid var(--line);
+
     border-radius:4px;
+
     padding:32px 36px;
   }
 
+
   .insta-card a{
     text-decoration:none;
+
     color:var(--gold-400);
+
     font-weight:700;
+
     font-size:15px;
+
     border:1px solid var(--gold-400);
+
     padding:12px 26px;
+
     border-radius:2px;
+
     transition:.2s;
   }
 
+
   .insta-card a:hover{
     background:var(--gold-400);
+
     color:var(--night-950);
   }
 
+
   .foot-meta{
     margin-top:40px;
+
     color:var(--moon-500);
+
     font-size:12px;
+
     text-align:center;
   }
+
 
 
   /* ========================================
@@ -909,82 +1309,151 @@
   @media (max-width:600px){
 
     .hero{
+
+      min-height:620px;
+
       padding:80px 24px 100px;
+
+      /*
+        スマホでは画像の右側にある月を
+        なるべく残す。
+      */
+
+      background-position:
+        center,
+        center,
+        68% center;
     }
+
 
     .hero-sub{
       font-size:15px;
+
+      max-width:32ch;
     }
+
 
     .hero-ctas{
       margin-top:34px;
     }
+
 
     .btn-primary,
     .btn-ghost{
       padding:14px 24px;
     }
 
+
     section{
       padding:72px 0;
     }
+
 
     .section-head{
       margin-bottom:38px;
     }
 
+
+    .availability-head{
+      max-width:none;
+    }
+
+
+    .availability-head .lead{
+      max-width:none;
+
+      line-height:1.9;
+    }
+
+
     .reserve-head{
       max-width:none;
     }
+
 
     .reserve-head .lead{
       line-height:1.9;
     }
 
+
     .menu-row{
       gap:12px;
     }
+
 
     .menu-name{
       font-size:17px;
     }
 
+
     .menu-desc{
       font-size:12px;
     }
+
 
     .menu-price{
       font-size:17px;
     }
 
+
     .insta-card{
       padding:26px;
     }
+
   }
+
 </style>
 </head>
 
 
+
 <body>
 
+
+<!-- ========================================
+     NAV
+======================================== -->
+
 <header class="nav">
+
   <div class="nav-inner">
 
     <a class="brand" href="#top">
+
       夢夜
-      <span>YUMEYA / NIGHT BODY CARE</span>
+
+      <span>
+        YUMEYA / NIGHT BODY CARE
+      </span>
+
     </a>
 
+
     <nav class="links">
-      <a href="#menu">メニュー・料金</a>
-      <a href="#flow">ご利用の流れ</a>
-      <a href="#instagram">Instagram</a>
+
+      <a href="#menu">
+        メニュー・料金
+      </a>
+
+      <a href="#flow">
+        ご利用の流れ
+      </a>
+
+      <a href="#instagram">
+        Instagram
+      </a>
+
     </nav>
 
-    <a class="nav-cta" href="#reserve">ご予約</a>
+
+    <a class="nav-cta" href="#reserve">
+      ご予約
+    </a>
 
   </div>
+
 </header>
+
 
 
 <!-- ========================================
@@ -993,43 +1462,46 @@
 
 <section class="hero" id="top">
 
-  <div class="moon-wrap">
-    <img
-      class="moon-img"
-      src="moon.jpg"
-      alt=""
-      aria-hidden="true"
-    >
-  </div>
-
   <div class="hero-inner">
 
     <div class="eyebrow">
       深夜専門 出張ボディケア
     </div>
 
+
     <h1 class="headline">
+
       夜に、そっと<br>
       寄り添う。
+
     </h1>
 
+
     <p class="hero-sub">
-      眠れない夜、張りつめた一日の終わりに。指先の静けさだけを持って、あなたのもとへ伺います。
+
+      眠れない夜、張りつめた一日の終わりに。
+      指先の静けさだけを持って、あなたのもとへ伺います。
+
     </p>
 
+
     <div class="hero-ctas">
+
       <a class="btn-primary" href="#reserve">
         予約フォームへ
       </a>
 
+
       <a class="btn-ghost" href="#menu">
         メニューを見る
       </a>
+
     </div>
 
   </div>
 
 </section>
+
 
 
 <!-- ========================================
@@ -1046,69 +1518,149 @@
         MENU
       </div>
 
+
       <h2>
         メニュー・料金
       </h2>
 
+
       <p class="lead">
-        すべて出張料込みの表示です。ご希望のコースは予約フォームでお選びいただけます。
+
+        すべて出張料込みの表示です。
+        ご希望のコースは予約フォームでお選びいただけます。
+
       </p>
 
     </div>
 
 
+
     <div class="menu-row">
+
       <div>
-        <div class="menu-name">60分コース</div>
-        <div class="menu-desc">お疲れの部位を中心に、短時間でしっかりと</div>
+
+        <div class="menu-name">
+          60分コース
+        </div>
+
+        <div class="menu-desc">
+          お疲れの部位を中心に、短時間でしっかりと
+        </div>
+
       </div>
-      <div class="menu-price">¥6,600</div>
+
+
+      <div class="menu-price">
+        ¥6,600
+      </div>
+
     </div>
 
 
+
     <div class="menu-row">
+
       <div>
-        <div class="menu-name">80分コース</div>
-        <div class="menu-desc">全身をゆっくりとほぐす、standard な一枠</div>
+
+        <div class="menu-name">
+          80分コース
+        </div>
+
+        <div class="menu-desc">
+          全身をゆっくりとほぐす、standard な一枠
+        </div>
+
       </div>
-      <div class="menu-price">¥8,400</div>
+
+
+      <div class="menu-price">
+        ¥8,400
+      </div>
+
     </div>
 
 
+
     <div class="menu-row">
+
       <div>
-        <div class="menu-name">90分コース</div>
-        <div class="menu-desc">全身+気になる箇所を重点的に</div>
+
+        <div class="menu-name">
+          90分コース
+        </div>
+
+        <div class="menu-desc">
+          全身+気になる箇所を重点的に
+        </div>
+
       </div>
-      <div class="menu-price">¥9,000</div>
+
+
+      <div class="menu-price">
+        ¥9,000
+      </div>
+
     </div>
 
 
+
     <div class="menu-row">
+
       <div>
-        <div class="menu-name">100分コース</div>
-        <div class="menu-desc">じっくりと、深部までゆるめる時間</div>
+
+        <div class="menu-name">
+          100分コース
+        </div>
+
+        <div class="menu-desc">
+          じっくりと、深部までゆるめる時間
+        </div>
+
       </div>
-      <div class="menu-price">¥10,000</div>
+
+
+      <div class="menu-price">
+        ¥10,000
+      </div>
+
     </div>
 
 
+
     <div class="menu-row">
+
       <div>
-        <div class="menu-name">120分コース</div>
-        <div class="menu-desc">最も深く、時間を気にせず整える一枠</div>
+
+        <div class="menu-name">
+          120分コース
+        </div>
+
+        <div class="menu-desc">
+          最も深く、時間を気にせず整える一枠
+        </div>
+
       </div>
-      <div class="menu-price">¥11,400</div>
+
+
+      <div class="menu-price">
+        ¥11,400
+      </div>
+
     </div>
+
 
 
     <p class="menu-note">
-      ※施術内容・料金は今後変更となる場合がございます。最新情報はご予約時にご確認ください。
+
+      ※施術内容・料金は今後変更となる場合がございます。
+      最新情報はご予約時にご確認ください。
+
     </p>
 
   </div>
 
 </section>
+
 
 
 <!-- ========================================
@@ -1125,6 +1677,7 @@
         FLOW
       </div>
 
+
       <h2>
         ご利用の流れ
       </h2>
@@ -1132,72 +1685,123 @@
     </div>
 
 
+
     <div class="flow">
 
+
       <div class="flow-item">
-        <div class="flow-num">01</div>
+
+        <div class="flow-num">
+          01
+        </div>
+
 
         <div>
+
           <div class="flow-title">
             予約フォームより送信
           </div>
 
+
           <div class="flow-text">
-            ご希望の日時・コースなど必要事項をご入力の上、送信してください。
+
+            ご希望の日時・コースなど必要事項をご入力の上、
+            送信してください。
+
           </div>
+
         </div>
+
       </div>
 
 
+
       <div class="flow-item">
-        <div class="flow-num">02</div>
+
+        <div class="flow-num">
+          02
+        </div>
+
 
         <div>
+
           <div class="flow-title">
             仮予約として受付
           </div>
 
+
           <div class="flow-text">
-            送信いただいた内容は「仮予約」として受付いたします。この時点ではご予約は確定しておりません。
+
+            送信いただいた内容は「仮予約」として受付いたします。
+            この時点ではご予約は確定しておりません。
+
           </div>
+
         </div>
+
       </div>
 
 
+
       <div class="flow-item">
-        <div class="flow-num">03</div>
+
+        <div class="flow-num">
+          03
+        </div>
+
 
         <div>
+
           <div class="flow-title">
             予約確定のご連絡
           </div>
 
+
           <div class="flow-text">
-            空き状況を確認の上、ご登録のメールアドレスへ確定のご連絡を差し上げます。
+
+            空き状況を確認の上、
+            ご登録のメールアドレスへ確定のご連絡を差し上げます。
+
           </div>
+
         </div>
+
       </div>
 
 
+
       <div class="flow-item">
-        <div class="flow-num">04</div>
+
+        <div class="flow-num">
+          04
+        </div>
+
 
         <div>
+
           <div class="flow-title">
             当日、お伺いします
           </div>
 
+
           <div class="flow-text">
-            確定したお日にち・お時間に伺います。到着前にご連絡いたします。
+
+            確定したお日にち・お時間に伺います。
+            到着前にご連絡いたします。
+
           </div>
+
         </div>
+
       </div>
+
 
     </div>
 
   </div>
 
 </section>
+
 
 
 <!-- ========================================
@@ -1208,49 +1812,82 @@
 
   <div class="wrap">
 
-    <div class="section-head">
+
+    <!-- ★ ここをavailability-headに変更 -->
+
+    <div class="section-head availability-head">
+
 
       <div class="section-label">
         AVAILABILITY
       </div>
 
+
       <h2>
         空き状況カレンダー
       </h2>
 
+
       <p class="lead">
-        目安の空き状況です。正式なご予約は下のフォームより承っております。
+
+        目安の空き状況です。
+        正式なご予約は下のフォームより承っております。
+
       </p>
 
     </div>
 
 
+
     <div class="cal-card">
 
-      <div class="cal-dates" id="calDates"></div>
+
+      <div
+        class="cal-dates"
+        id="calDates"
+      ></div>
+
 
 
       <div class="cal-legend">
 
+
         <span class="legend-item">
+
           <i class="dot dot-open"></i>
+
           空きあり
+
         </span>
 
+
         <span class="legend-item">
+
           <i class="dot dot-buffer"></i>
+
           前後確保中
+
         </span>
 
+
         <span class="legend-item">
+
           <i class="dot dot-booked"></i>
+
           予約済み
+
         </span>
+
 
       </div>
 
 
-      <div class="cal-slots" id="calSlots"></div>
+
+      <div
+        class="cal-slots"
+        id="calSlots"
+      ></div>
+
 
 
       <div
@@ -1259,24 +1896,34 @@
         style="display:none;"
       >
 
+
         <p class="owner-hint">
-          タップして空き状況を切り替えられます（この編集画面はあなただけに表示されています）。
+
+          タップして空き状況を切り替えられます
+          （この編集画面はあなただけに表示されています）。
+
         </p>
 
+
         <div class="owner-actions">
+
 
           <button
             type="button"
             class="btn-small"
             id="publishCalBtn"
           >
+
             この内容を公開する
+
           </button>
+
 
           <span
             id="publishStatus"
             class="publish-status"
           ></span>
+
 
         </div>
 
@@ -1289,16 +1936,21 @@
 </section>
 
 
+
 <script
   type="application/json"
   id="cal-data-raw"
 >__CAL_DATA_JSON__</script>
 
 
+
 <script>
+
 (function(){
 
+
   const TIME_SLOTS = [
+
     "22:00",
     "22:30",
     "23:00",
@@ -1312,17 +1964,22 @@
     "3:00",
     "3:30",
     "4:00"
+
   ];
+
 
   const BUFFER_STEPS = 2;
 
 
   let calData;
 
+
   try{
 
     calData = JSON.parse(
-      document.getElementById('cal-data-raw').textContent
+      document.getElementById(
+        'cal-data-raw'
+      ).textContent
     );
 
   }catch(e){
@@ -1334,50 +1991,86 @@
   }
 
 
-  if(!calData || typeof calData !== 'object'){
+  if(
+    !calData ||
+    typeof calData !== 'object'
+  ){
+
     calData = {
       booked:{}
     };
+
   }
 
 
   if(!calData.booked){
+
     calData.booked = {};
+
   }
 
 
   const datesEl =
-    document.getElementById('calDates');
+    document.getElementById(
+      'calDates'
+    );
+
 
   const slotsEl =
-    document.getElementById('calSlots');
+    document.getElementById(
+      'calSlots'
+    );
+
 
   const ownerPanel =
-    document.getElementById('ownerPanel');
+    document.getElementById(
+      'ownerPanel'
+    );
+
 
   const publishBtn =
-    document.getElementById('publishCalBtn');
+    document.getElementById(
+      'publishCalBtn'
+    );
+
 
   const publishStatus =
-    document.getElementById('publishStatus');
+    document.getElementById(
+      'publishStatus'
+    );
 
 
   const DAYS_AHEAD = 21;
 
+
   const dateList = [];
+
 
   const base = new Date();
 
-  base.setHours(0,0,0,0);
+
+  base.setHours(
+    0,
+    0,
+    0,
+    0
+  );
 
 
-  for(let i=0;i<DAYS_AHEAD;i++){
+  for(
+    let i = 0;
+    i < DAYS_AHEAD;
+    i++
+  ){
 
-    const d = new Date(base);
+    const d =
+      new Date(base);
+
 
     d.setDate(
-      base.getDate()+i
+      base.getDate() + i
     );
+
 
     dateList.push(d);
 
@@ -1388,9 +2081,13 @@
 
     return d.getFullYear()
       + '-'
-      + String(d.getMonth()+1).padStart(2,'0')
+      + String(
+          d.getMonth()+1
+        ).padStart(2,'0')
       + '-'
-      + String(d.getDate()).padStart(2,'0');
+      + String(
+          d.getDate()
+        ).padStart(2,'0');
 
   }
 
@@ -1398,7 +2095,16 @@
   function fmtLabel(d){
 
     const w =
-      ['日','月','火','水','木','金','土'][d.getDay()];
+      [
+        '日',
+        '月',
+        '火',
+        '水',
+        '木',
+        '金',
+        '土'
+      ][d.getDay()];
+
 
     return (
       d.getMonth()+1
@@ -1413,12 +2119,18 @@
 
 
   let selectedKey =
-    fmtKey(dateList[0]);
+    fmtKey(
+      dateList[0]
+    );
+
 
   let isOwner = false;
 
 
-  function statusFor(key,idx){
+  function statusFor(
+    key,
+    idx
+  ){
 
     const booked =
       calData.booked[key] || [];
@@ -1434,14 +2146,15 @@
 
 
     for(
-      let i=0;
-      i<booked.length;
+      let i = 0;
+      i < booked.length;
       i++
     ){
 
       if(
-        Math.abs(booked[i]-idx)
-        <= BUFFER_STEPS
+        Math.abs(
+          booked[i] - idx
+        ) <= BUFFER_STEPS
       ){
 
         return 'buffer';
@@ -1461,44 +2174,57 @@
     datesEl.innerHTML = '';
 
 
-    dateList.forEach(function(d){
+    dateList.forEach(
+      function(d){
 
-      const key = fmtKey(d);
+        const key =
+          fmtKey(d);
 
-      const btn =
-        document.createElement('button');
 
-      btn.type = 'button';
+        const btn =
+          document.createElement(
+            'button'
+          );
 
-      btn.className =
-        'cal-date-btn'
-        + (
-          key === selectedKey
-            ? ' active'
-            : ''
+
+        btn.type =
+          'button';
+
+
+        btn.className =
+          'cal-date-btn'
+          +
+          (
+            key === selectedKey
+              ? ' active'
+              : ''
+          );
+
+
+        btn.textContent =
+          fmtLabel(d);
+
+
+        btn.addEventListener(
+          'click',
+          function(){
+
+            selectedKey =
+              key;
+
+
+            renderDates();
+
+            renderSlots();
+
+          }
         );
 
-      btn.textContent =
-        fmtLabel(d);
 
+        datesEl.appendChild(btn);
 
-      btn.addEventListener(
-        'click',
-        function(){
-
-          selectedKey = key;
-
-          renderDates();
-
-          renderSlots();
-
-        }
-      );
-
-
-      datesEl.appendChild(btn);
-
-    });
+      }
+    );
 
   }
 
@@ -1508,61 +2234,82 @@
     slotsEl.innerHTML = '';
 
 
-    TIME_SLOTS.forEach(function(t,idx){
+    TIME_SLOTS.forEach(
+      function(t,idx){
 
-      const st =
-        statusFor(
-          selectedKey,
-          idx
-        );
-
-
-      const chip =
-        document.createElement('button');
-
-      chip.type = 'button';
-
-      chip.className =
-        'slot-chip slot-' + st;
-
-      chip.textContent = t;
-
-      chip.disabled = !isOwner;
+        const st =
+          statusFor(
+            selectedKey,
+            idx
+          );
 
 
-      if(isOwner){
+        const chip =
+          document.createElement(
+            'button'
+          );
 
-        chip.addEventListener(
-          'click',
-          function(){
 
-            toggleSlot(
-              selectedKey,
-              idx
-            );
+        chip.type =
+          'button';
 
-          }
+
+        chip.className =
+          'slot-chip slot-' + st;
+
+
+        chip.textContent =
+          t;
+
+
+        chip.disabled =
+          !isOwner;
+
+
+        if(isOwner){
+
+          chip.addEventListener(
+            'click',
+            function(){
+
+              toggleSlot(
+                selectedKey,
+                idx
+              );
+
+            }
+          );
+
+        }
+
+
+        slotsEl.appendChild(
+          chip
         );
 
       }
-
-
-      slotsEl.appendChild(chip);
-
-    });
+    );
 
   }
 
 
-  function toggleSlot(key,idx){
+  function toggleSlot(
+    key,
+    idx
+  ){
 
-    if(!calData.booked[key]){
+    if(
+      !calData.booked[key]
+    ){
+
       calData.booked[key] = [];
+
     }
 
 
     const arr =
       calData.booked[key];
+
 
     const pos =
       arr.indexOf(idx);
@@ -1570,7 +2317,10 @@
 
     if(pos >= 0){
 
-      arr.splice(pos,1);
+      arr.splice(
+        pos,
+        1
+      );
 
     }else{
 
@@ -1579,7 +2329,9 @@
     }
 
 
-    if(arr.length === 0){
+    if(
+      arr.length === 0
+    ){
 
       delete calData.booked[key];
 
@@ -1602,17 +2354,39 @@
   function escLit(s){
 
     return s
-      .replace(/\\/g,'\\\\')
-      .replace(/`/g,'\\`')
-      .replace(/\$\{/g,'\\${');
+      .replace(
+        /\\/g,
+        '\\\\'
+      )
+      .replace(
+        /`/g,
+        '\\`'
+      )
+      .replace(
+        /\$\{/g,
+        '\\${'
+      );
 
   }
+
+
+  /*
+    GitHub PagesではClaudeの
+    artifact公開機能は使用しないため、
+    この機能はOwnerモードが有効な環境で
+    だけ動作する。
+  */
+
+  let PAGE_TEMPLATE = '';
 
 
   function buildDoc(newData){
 
     const dataStr =
-      JSON.stringify(newData);
+      JSON.stringify(
+        newData
+      );
+
 
     let out =
       PAGE_TEMPLATE;
@@ -1622,7 +2396,9 @@
       out.replace(
         '__CAL_DATA_JSON__',
         function(){
+
           return dataStr;
+
         }
       );
 
@@ -1631,7 +2407,11 @@
       out.replace(
         '__PAGE_TEMPLATE_SELF__',
         function(){
-          return escLit(PAGE_TEMPLATE);
+
+          return escLit(
+            PAGE_TEMPLATE
+          );
+
         }
       );
 
@@ -1652,7 +2432,9 @@
       ){
 
         const user =
-          await window.claude.use('user');
+          await window.claude.use(
+            'user'
+          );
 
 
         if(
@@ -1664,6 +2446,7 @@
         ){
 
           isOwner = true;
+
 
           ownerPanel.style.display =
             'block';
@@ -1723,10 +2506,14 @@
 
 
           const html =
-            buildDoc(calData);
+            buildDoc(
+              calData
+            );
 
 
-          await artifactCap.publish(html);
+          await artifactCap.publish(
+            html
+          );
 
 
           publishStatus.textContent =
@@ -1736,7 +2523,8 @@
         }catch(e){
 
           publishStatus.textContent =
-            '公開に失敗しました。もう一度お試しください。';
+            '公開に失敗しました。
+もう一度お試しください。';
 
         }
 
@@ -1753,7 +2541,9 @@
   initOwnerMode();
 
 })();
+
 </script>
+
 
 
 <!-- ========================================
@@ -1764,58 +2554,96 @@
 
   <div class="wrap">
 
+
     <div class="section-head reserve-head">
+
 
       <div class="section-label">
         RESERVATION
       </div>
 
+
       <h2>
         ご予約フォーム
       </h2>
 
+
       <p class="lead">
-        下のフォームより必要事項をご入力ください。送信いただいた内容は仮予約となります。
-        折り返し確定のご連絡をお送りしますので、今しばらくお待ちください。
+
+        下のフォームより必要事項をご入力ください。
+        送信いただいた内容は仮予約となります。
+        折り返し確定のご連絡をお送りしますので、
+        今しばらくお待ちください。
+
       </p>
 
     </div>
 
 
+
     <div class="form-card reserve-card">
+
 
       <div class="policy-box">
 
+
         <ul class="policy-list">
 
-          <li>
-            ご予約はメールでの確定連絡をもって成立となります。仮予約の時点ではお時間を確保するものではございません。
-          </li>
 
           <li>
-            キャンセルは確定後、前日までにご連絡ください。当日キャンセルは施術料金の50%、無断キャンセルは全額を申し受けます。
+
+            ご予約はメールでの確定連絡をもって成立となります。
+            仮予約の時点ではお時間を確保するものではございません。
+
           </li>
 
-          <li>
-            ご希望のお日にちが既にご予約で埋まっている場合は、確定連絡にて別日時をご相談させていただきます。
-          </li>
 
           <li>
-            マッサージ以外の性的サービスは一切行っておりません。あらかじめご了承ください。
+
+            キャンセルは確定後、前日までにご連絡ください。
+            当日キャンセルは施術料金の50%、
+            無断キャンセルは全額を申し受けます。
+
           </li>
 
+
           <li>
-            飲酒後の施術、体調不良時のご予約はご遠慮いただく場合がございます。
+
+            ご希望のお日にちが既にご予約で埋まっている場合は、
+            確定連絡にて別日時をご相談させていただきます。
+
           </li>
+
+
+          <li>
+
+            マッサージ以外の性的サービスは一切行っておりません。
+            あらかじめご了承ください。
+
+          </li>
+
+
+          <li>
+
+            飲酒後の施術、体調不良時のご予約は
+            ご遠慮いただく場合がございます。
+
+          </li>
+
 
         </ul>
 
       </div>
 
 
+
       <p class="form-note reserve-note">
-        フォーム内の同意チェックボックスにご同意のうえ、送信してください。
+
+        フォーム内の同意チェックボックスに
+        ご同意のうえ、送信してください。
+
       </p>
+
 
 
       <a
@@ -1824,7 +2652,9 @@
         target="_blank"
         rel="noopener"
       >
+
         予約フォームを開く（Googleフォーム）
+
       </a>
 
     </div>
@@ -1832,6 +2662,7 @@
   </div>
 
 </section>
+
 
 
 <!-- ========================================
@@ -1842,19 +2673,26 @@
 
   <div class="wrap">
 
+
     <div class="insta-card">
 
+
       <div>
+
 
         <div class="section-label">
           INSTAGRAM
         </div>
 
+
         <h2 style="margin-top:10px;">
+
           日々の空き状況・お知らせはこちらから
+
         </h2>
 
       </div>
+
 
 
       <a
@@ -1862,14 +2700,18 @@
         target="_blank"
         rel="noopener"
       >
+
         @yumeya_relax
+
       </a>
+
 
     </div>
 
   </div>
 
 </section>
+
 
 
 <!-- ========================================
@@ -1881,7 +2723,11 @@
   <div class="wrap">
 
     <p class="foot-meta">
-      夢夜 -yumeya- ｜ 深夜専門 出張ボディケア ｜ マッサージ以外の性的サービスは行っておりません
+
+      夢夜 -yumeya-
+      ｜ 深夜専門 出張ボディケア
+      ｜ マッサージ以外の性的サービスは行っておりません
+
     </p>
 
   </div>
