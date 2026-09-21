@@ -1,22 +1,39 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-<title>夢夜 -yumeya- | 深夜専門 出張ボディケア</title>
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, viewport-fit=cover"
+>
+
+<title>
+  夢夜 -yumeya- | 深夜専門 出張ボディケア
+</title>
+
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
+>
+
 
 <link
   href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
   rel="stylesheet"
 >
 
+
 <style>
 
+
   :root{
+
     --night-950:#0a0817;
     --night-900:#130f24;
     --night-850:#191331;
@@ -32,51 +49,79 @@
 
     --serif:'Shippori Mincho', serif;
     --sans:'Zen Kaku Gothic New', sans-serif;
+
   }
 
 
   *{
+
     box-sizing:border-box;
+
     margin:0;
     padding:0;
+
   }
 
 
   html{
+
     scroll-behavior:smooth;
-    scroll-padding-top:calc(72px + env(safe-area-inset-top, 0px));
+
+    scroll-padding-top:
+      calc(
+        72px +
+        env(safe-area-inset-top, 0px)
+      );
+
   }
 
 
   body{
+
     background:var(--night-950);
+
     color:var(--moon-100);
+
     font-family:var(--sans);
+
     line-height:1.85;
+
     -webkit-font-smoothing:antialiased;
 
-    padding-top:env(safe-area-inset-top, 0px);
-    padding-bottom:env(safe-area-inset-bottom, 0px);
+    padding-top:
+      env(safe-area-inset-top, 0px);
+
+    padding-bottom:
+      env(safe-area-inset-bottom, 0px);
 
     overflow-x:hidden;
+
   }
 
 
   a{
+
     color:inherit;
+
   }
 
 
   img,
   svg{
+
     max-width:100%;
+
   }
 
 
   .wrap{
+
     max-width:920px;
+
     margin:0 auto;
+
     padding:0 24px;
+
   }
 
 
@@ -85,84 +130,115 @@
      NAV
   ======================================== */
 
+
   header.nav{
+
     position:sticky;
+
     top:0;
+
     z-index:50;
 
-    padding-top:env(safe-area-inset-top, 0px);
+    padding-top:
+      env(safe-area-inset-top, 0px);
 
-    background:rgba(10,8,23,0.82);
+    background:
+      rgba(10,8,23,0.82);
 
     backdrop-filter:blur(10px);
 
-    border-bottom:1px solid var(--line);
+    border-bottom:
+      1px solid var(--line);
+
   }
 
 
   .nav-inner{
+
     max-width:920px;
+
     margin:0 auto;
 
     padding:16px 24px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
   }
 
 
   .brand{
+
     font-family:var(--serif);
+
     font-size:20px;
+
     letter-spacing:.08em;
+
     font-weight:600;
 
     color:var(--moon-100);
 
     text-decoration:none;
+
   }
 
 
   .brand span{
+
     color:var(--gold-400);
 
     font-size:12px;
+
     letter-spacing:.2em;
 
     display:block;
 
     font-family:var(--sans);
+
     font-weight:400;
 
     margin-top:2px;
+
   }
 
 
   nav.links{
+
     display:flex;
+
     gap:22px;
 
     font-size:13px;
+
   }
 
 
   nav.links a{
+
     text-decoration:none;
 
     color:var(--moon-300);
 
     transition:color .25s;
+
   }
 
 
   nav.links a:hover{
+
     color:var(--moon-100);
+
   }
 
 
   .nav-cta{
+
     background:var(--gold-400);
+
     color:var(--night-950);
 
     padding:9px 20px;
@@ -170,24 +246,31 @@
     border-radius:2px;
 
     font-size:13px;
+
     text-decoration:none;
+
     font-weight:700;
 
     letter-spacing:.04em;
 
     transition:background .25s;
+
   }
 
 
   .nav-cta:hover{
+
     background:var(--gold-300);
+
   }
 
 
   @media (max-width:680px){
 
     nav.links{
+
       display:none;
+
     }
 
   }
@@ -198,7 +281,9 @@
      HERO
   ======================================== */
 
+
   .hero{
+
     position:relative;
 
     min-height:600px;
@@ -206,11 +291,13 @@
     padding:110px 24px 120px;
 
     display:flex;
+
     align-items:center;
 
     text-align:left;
 
     background:
+
       linear-gradient(
         90deg,
         rgba(10,8,23,.94) 0%,
@@ -219,11 +306,13 @@
         rgba(10,8,23,.18) 78%,
         rgba(10,8,23,.30) 100%
       ),
+
       linear-gradient(
         180deg,
         rgba(10,8,23,.20),
         rgba(10,8,23,.48)
       ),
+
       url("moon.jpg");
 
     background-size:
@@ -242,36 +331,46 @@
       no-repeat;
 
     overflow:hidden;
+
   }
 
 
   .hero-inner{
+
     width:100%;
+
     max-width:920px;
 
     margin:0 auto;
 
     position:relative;
+
     z-index:2;
+
   }
 
 
   .eyebrow{
+
     color:var(--gold-400);
 
     font-size:13px;
+
     letter-spacing:.15em;
 
     margin-bottom:22px;
+
   }
 
 
   h1.headline{
+
     font-family:var(--serif);
 
     font-weight:700;
 
-    font-size:clamp(34px,6vw,58px);
+    font-size:
+      clamp(34px,6vw,58px);
 
     color:var(--moon-100);
 
@@ -283,10 +382,12 @@
 
     text-shadow:
       0 2px 20px rgba(0,0,0,.45);
+
   }
 
 
   .hero-sub{
+
     margin-top:26px;
 
     color:var(--moon-300);
@@ -297,21 +398,27 @@
 
     text-shadow:
       0 1px 10px rgba(0,0,0,.5);
+
   }
 
 
   .hero-ctas{
+
     margin-top:44px;
 
     display:flex;
+
     gap:16px;
 
     flex-wrap:wrap;
+
   }
 
 
   .btn-primary{
+
     background:var(--gold-400);
+
     color:var(--night-950);
 
     padding:15px 32px;
@@ -321,20 +428,25 @@
     text-decoration:none;
 
     font-weight:700;
+
     font-size:15px;
 
     letter-spacing:.03em;
 
     transition:background .25s;
+
   }
 
 
   .btn-primary:hover{
+
     background:var(--gold-300);
+
   }
 
 
   .btn-ghost{
+
     border:1px solid var(--line);
 
     color:var(--moon-300);
@@ -353,14 +465,18 @@
       border-color .25s,
       color .25s,
       background .25s;
+
   }
 
 
   .btn-ghost:hover{
+
     border-color:var(--moon-500);
+
     color:var(--moon-100);
 
     background:rgba(10,8,23,.35);
+
   }
 
 
@@ -369,24 +485,32 @@
      SECTION COMMON
   ======================================== */
 
+
   section{
+
     padding:96px 0;
+
   }
 
 
   section + section{
+
     border-top:1px solid var(--line);
+
   }
 
 
   .section-head{
+
     margin-bottom:52px;
 
     max-width:46ch;
+
   }
 
 
   .section-label{
+
     color:var(--gold-400);
 
     font-size:13px;
@@ -394,28 +518,34 @@
     letter-spacing:.15em;
 
     margin-bottom:14px;
+
   }
 
 
   h2{
+
     font-family:var(--serif);
 
-    font-size:clamp(24px,3.4vw,32px);
+    font-size:
+      clamp(24px,3.4vw,32px);
 
     font-weight:600;
 
     color:var(--moon-100);
 
     letter-spacing:.02em;
+
   }
 
 
   .lead{
+
     color:var(--moon-300);
 
     margin-top:16px;
 
     font-size:15px;
+
   }
 
 
@@ -424,24 +554,34 @@
      AVAILABILITY / RESERVATION HEAD
   ======================================== */
 
+
   .availability-head{
+
     max-width:820px;
+
   }
 
 
   .availability-head .lead{
+
     max-width:none;
+
     white-space:normal;
+
   }
 
 
   .reserve-head{
+
     max-width:820px;
+
   }
 
 
   .reserve-head .lead{
+
     max-width:none;
+
   }
 
 
@@ -450,10 +590,13 @@
      MENU
   ======================================== */
 
+
   .menu-row{
+
     display:flex;
 
     justify-content:space-between;
+
     align-items:baseline;
 
     padding:22px 0;
@@ -461,33 +604,41 @@
     border-bottom:1px solid var(--line);
 
     gap:20px;
+
   }
 
 
   .menu-row:first-of-type{
+
     border-top:1px solid var(--line);
+
   }
 
 
   .menu-name{
+
     font-family:var(--serif);
 
     font-size:19px;
 
     color:var(--moon-100);
+
   }
 
 
   .menu-desc{
+
     color:var(--moon-500);
 
     font-size:13px;
 
     margin-top:6px;
+
   }
 
 
   .menu-price{
+
     font-family:var(--serif);
 
     font-size:19px;
@@ -495,15 +646,18 @@
     color:var(--gold-400);
 
     white-space:nowrap;
+
   }
 
 
   .menu-note{
+
     margin-top:28px;
 
     color:var(--moon-500);
 
     font-size:13px;
+
   }
 
 
@@ -512,16 +666,20 @@
      FLOW
   ======================================== */
 
+
   .flow{
+
     display:flex;
 
     flex-direction:column;
 
     gap:0;
+
   }
 
 
   .flow-item{
+
     display:grid;
 
     grid-template-columns:44px 1fr;
@@ -533,24 +691,30 @@
     border-bottom:1px solid var(--line);
 
     position:relative;
+
   }
 
 
   .flow-item:first-child{
+
     border-top:1px solid var(--line);
+
   }
 
 
   .flow-num{
+
     font-family:var(--serif);
 
     color:var(--gold-400);
 
     font-size:20px;
+
   }
 
 
   .flow-title{
+
     font-weight:700;
 
     color:var(--moon-100);
@@ -558,13 +722,16 @@
     margin-bottom:6px;
 
     font-size:15px;
+
   }
 
 
   .flow-text{
+
     color:var(--moon-300);
 
     font-size:14px;
+
   }
 
 
@@ -573,7 +740,9 @@
      FORM
   ======================================== */
 
+
   .form-card{
+
     background:var(--night-850);
 
     border:1px solid var(--line);
@@ -581,47 +750,59 @@
     border-radius:4px;
 
     padding:40px;
+
   }
 
 
   @media (max-width:600px){
 
     .form-card{
+
       padding:26px;
+
     }
 
   }
 
 
   .reserve-card .policy-box{
+
     max-height:none;
 
     margin-bottom:20px;
+
   }
 
 
   .reserve-note{
+
     margin-bottom:24px;
 
     text-align:center;
+
   }
 
 
   .reserve-link{
+
     display:block;
 
     text-align:center;
 
     text-decoration:none;
+
   }
 
 
   .field{
+
     margin-bottom:22px;
+
   }
 
 
   .field label{
+
     display:block;
 
     font-size:13px;
@@ -631,22 +812,27 @@
     margin-bottom:8px;
 
     letter-spacing:.02em;
+
   }
 
 
   .req{
+
     color:var(--gold-400);
 
     margin-left:4px;
+
   }
 
 
   .opt{
+
     color:var(--moon-500);
 
     margin-left:6px;
 
     font-size:12px;
+
   }
 
 
@@ -674,62 +860,76 @@
     font-size:15px;
 
     transition:border-color .2s;
+
   }
 
 
   input:focus,
   select:focus,
   textarea:focus{
+
     outline:none;
 
     border-color:var(--gold-400);
+
   }
 
 
   textarea{
+
     resize:vertical;
 
     min-height:80px;
+
   }
 
 
   .row2{
+
     display:grid;
 
     grid-template-columns:1fr 1fr;
 
     gap:18px;
+
   }
 
 
   @media (max-width:560px){
 
     .row2{
+
       grid-template-columns:1fr;
+
     }
 
   }
 
 
   fieldset{
+
     border:1px solid var(--line);
 
     border-radius:3px;
 
     padding:14px 16px;
+
   }
 
 
   legend{
+
     padding:0 6px;
 
     font-size:13px;
 
     color:var(--moon-300);
+
   }
 
 
   .radio-group{
+
     display:flex;
 
     gap:22px;
@@ -737,10 +937,12 @@
     flex-wrap:wrap;
 
     padding-top:4px;
+
   }
 
 
   .radio-group label{
+
     display:flex;
 
     align-items:center;
@@ -752,18 +954,23 @@
     font-size:14px;
 
     margin:0;
+
   }
 
 
   .radio-group input{
+
     accent-color:var(--gold-400);
 
     width:16px;
+
     height:16px;
+
   }
 
 
   .policy-box{
+
     background:var(--night-900);
 
     border:1px solid var(--line);
@@ -781,15 +988,19 @@
     overflow-y:auto;
 
     margin-bottom:18px;
+
   }
 
 
   .policy-box p{
+
     margin-bottom:10px;
+
   }
 
 
   .agree-line{
+
     display:flex;
 
     align-items:flex-start;
@@ -799,27 +1010,34 @@
     font-size:14px;
 
     color:var(--moon-100);
+
   }
 
 
   .agree-line input{
+
     margin-top:4px;
 
     accent-color:var(--gold-400);
 
     width:17px;
+
     height:17px;
 
     flex:none;
+
   }
 
 
   .submit-row{
+
     margin-top:34px;
+
   }
 
 
   .btn-submit{
+
     width:100%;
 
     background:var(--gold-400);
@@ -843,22 +1061,28 @@
     transition:background .2s;
 
     font-family:var(--sans);
+
   }
 
 
   .btn-submit:hover{
+
     background:var(--gold-300);
+
   }
 
 
   .btn-submit:disabled{
+
     opacity:.45;
 
     cursor:not-allowed;
+
   }
 
 
   .form-note{
+
     margin-top:14px;
 
     font-size:12px;
@@ -866,10 +1090,12 @@
     color:var(--moon-500);
 
     line-height:1.8;
+
   }
 
 
   .result-box{
+
     display:none;
 
     margin-top:26px;
@@ -881,15 +1107,19 @@
     border-radius:3px;
 
     padding:22px;
+
   }
 
 
   .result-box.show{
+
     display:block;
+
   }
 
 
   .result-box h3{
+
     font-family:var(--serif);
 
     color:var(--gold-300);
@@ -897,19 +1127,23 @@
     font-size:16px;
 
     margin-bottom:10px;
+
   }
 
 
   .result-box p{
+
     font-size:13px;
 
     color:var(--moon-300);
 
     margin-bottom:12px;
+
   }
 
 
   .result-box textarea{
+
     background:var(--night-950);
 
     font-size:12px;
@@ -917,10 +1151,12 @@
     color:var(--moon-300);
 
     min-height:170px;
+
   }
 
 
   .btn-row{
+
     display:flex;
 
     gap:12px;
@@ -928,10 +1164,12 @@
     margin-top:14px;
 
     flex-wrap:wrap;
+
   }
 
 
   .btn-small{
+
     background:transparent;
 
     border:1px solid var(--line);
@@ -949,15 +1187,19 @@
     font-family:var(--sans);
 
     transition:border-color .2s;
+
   }
 
 
   .btn-small:hover{
+
     border-color:var(--gold-400);
+
   }
 
 
   .field-error{
+
     color:#e59a9a;
 
     font-size:12px;
@@ -965,11 +1207,14 @@
     margin-top:6px;
 
     display:none;
+
   }
 
 
   .field-error.show{
+
     display:block;
+
   }
 
 
@@ -978,23 +1223,29 @@
      POLICY
   ======================================== */
 
+
   .policy-list{
+
     color:var(--moon-300);
 
     font-size:14px;
+
   }
 
 
   .policy-list li{
+
     margin-bottom:12px;
 
     padding-left:1.2em;
 
     position:relative;
+
   }
 
 
   .policy-list li::before{
+
     content:'—';
 
     position:absolute;
@@ -1002,6 +1253,7 @@
     left:0;
 
     color:var(--gold-400);
+
   }
 
 
@@ -1010,7 +1262,9 @@
      CALENDAR
   ======================================== */
 
+
   .cal-card{
+
     background:var(--night-850);
 
     border:1px solid var(--line);
@@ -1018,10 +1272,12 @@
     border-radius:4px;
 
     padding:30px;
+
   }
 
 
   .cal-dates{
+
     display:flex;
 
     gap:8px;
@@ -1031,11 +1287,17 @@
     padding-bottom:12px;
 
     scrollbar-width:thin;
+
+    -webkit-overflow-scrolling:touch;
+
   }
 
 
   .cal-date-btn{
+
     flex:none;
+
+    min-width:82px;
 
     background:transparent;
 
@@ -1052,10 +1314,17 @@
     font-size:13px;
 
     cursor:pointer;
+
+    transition:
+      background .2s,
+      color .2s,
+      border-color .2s;
+
   }
 
 
   .cal-date-btn.active{
+
     background:var(--gold-400);
 
     color:var(--night-950);
@@ -1063,10 +1332,12 @@
     border-color:var(--gold-400);
 
     font-weight:700;
+
   }
 
 
   .cal-legend{
+
     display:flex;
 
     gap:18px;
@@ -1078,53 +1349,61 @@
     color:var(--moon-500);
 
     font-size:12px;
+
   }
 
 
   .legend-item{
+
     display:flex;
 
     align-items:center;
 
     gap:6px;
+
   }
 
 
   .dot{
+
     width:8px;
+
     height:8px;
 
     border-radius:50%;
 
     display:inline-block;
+
   }
 
 
   .dot-open{
+
     background:#7eb58c;
-  }
 
-
-  .dot-buffer{
-    background:var(--gold-400);
   }
 
 
   .dot-booked{
+
     background:#9d6670;
+
   }
 
 
   .cal-slots{
+
     display:grid;
 
     grid-template-columns:repeat(4,1fr);
 
     gap:8px;
+
   }
 
 
   .slot-chip{
+
     padding:11px 6px;
 
     border-radius:3px;
@@ -1136,73 +1415,81 @@
     border:1px solid var(--line);
 
     cursor:default;
+
   }
 
 
   .slot-open{
+
     background:rgba(126,181,140,.08);
 
     color:#a8d2b0;
 
     border-color:rgba(126,181,140,.3);
-  }
 
-
-  .slot-buffer{
-    background:rgba(201,166,107,.08);
-
-    color:var(--gold-300);
-
-    border-color:rgba(201,166,107,.3);
   }
 
 
   .slot-booked{
+
     background:rgba(157,102,112,.12);
 
     color:#c98d96;
 
     border-color:rgba(157,102,112,.3);
+
   }
 
 
-  .owner-panel{
-    margin-top:22px;
+  .calendar-loading{
 
-    padding-top:20px;
+    padding:20px 0;
 
-    border-top:1px solid var(--line);
-  }
+    text-align:center;
 
-
-  .owner-hint{
     color:var(--moon-500);
 
-    font-size:12px;
+    font-size:13px;
 
-    margin-bottom:12px;
   }
 
 
-  .owner-actions{
-    display:flex;
+  .calendar-error{
 
-    align-items:center;
+    padding:20px;
 
-    gap:12px;
+    text-align:center;
 
-    flex-wrap:wrap;
+    color:#c98d96;
+
+    font-size:13px;
+
+    line-height:1.8;
+
+    border:1px solid rgba(157,102,112,.3);
+
+    background:rgba(157,102,112,.08);
+
+    border-radius:3px;
+
   }
 
 
-  .publish-status{
+  .calendar-updated{
+
+    margin-top:18px;
+
     color:var(--moon-500);
 
-    font-size:12px;
+    font-size:11px;
+
+    text-align:right;
+
   }
 
 
   .cal-hours-note{
+
     margin-top:22px;
 
     padding-top:20px;
@@ -1214,18 +1501,34 @@
     font-size:12px;
 
     line-height:1.9;
+
   }
 
 
   @media (max-width:600px){
 
     .cal-card{
+
       padding:20px;
+
     }
 
 
     .cal-slots{
+
       grid-template-columns:repeat(3,1fr);
+
+    }
+
+
+    .cal-date-btn{
+
+      min-width:78px;
+
+      padding:9px 10px;
+
+      font-size:12px;
+
     }
 
   }
@@ -1236,23 +1539,29 @@
      FAQ
   ======================================== */
 
+
   .faq-list{
+
     display:flex;
 
     flex-direction:column;
 
     border-top:1px solid var(--line);
+
   }
 
 
   .faq-item{
+
     padding:28px 0;
 
     border-bottom:1px solid var(--line);
+
   }
 
 
   .faq-question{
+
     position:relative;
 
     padding-left:32px;
@@ -1266,10 +1575,12 @@
     color:var(--moon-100);
 
     line-height:1.6;
+
   }
 
 
   .faq-question::before{
+
     content:'Q';
 
     position:absolute;
@@ -1286,10 +1597,12 @@
     font-weight:700;
 
     letter-spacing:.05em;
+
   }
 
 
   .faq-answer{
+
     position:relative;
 
     padding-left:32px;
@@ -1301,10 +1614,12 @@
     font-size:14px;
 
     line-height:1.9;
+
   }
 
 
   .faq-answer::before{
+
     content:'A';
 
     position:absolute;
@@ -1321,10 +1636,12 @@
     font-weight:700;
 
     letter-spacing:.05em;
+
   }
 
 
   .faq-note{
+
     margin-top:28px;
 
     color:var(--moon-500);
@@ -1332,6 +1649,7 @@
     font-size:12px;
 
     line-height:1.8;
+
   }
 
 
@@ -1340,7 +1658,9 @@
      INSTAGRAM
   ======================================== */
 
+
   .insta-card{
+
     display:flex;
 
     align-items:center;
@@ -1358,35 +1678,44 @@
     border-radius:4px;
 
     padding:32px 36px;
+
   }
 
 
   .insta-info{
+
     flex:1;
 
     min-width:240px;
+
   }
 
 
   .insta-info .section-label{
+
     margin-bottom:10px;
+
   }
 
 
   .insta-title{
+
     font-family:var(--serif);
 
-    font-size:clamp(20px,3vw,28px);
+    font-size:
+      clamp(20px,3vw,28px);
 
     font-weight:600;
 
     color:var(--moon-100);
 
     line-height:1.5;
+
   }
 
 
   .insta-account{
+
     flex:none;
 
     display:flex;
@@ -1394,13 +1723,16 @@
     align-items:center;
 
     justify-content:center;
+
   }
 
 
   .insta-account a{
+
     display:inline-flex;
 
     align-items:center;
+
     justify-content:center;
 
     min-height:48px;
@@ -1422,13 +1754,16 @@
     transition:
       background .2s,
       color .2s;
+
   }
 
 
   .insta-account a:hover{
+
     background:var(--gold-400);
 
     color:var(--night-950);
+
   }
 
 
@@ -1437,12 +1772,21 @@
      FOOTER
   ======================================== */
 
+
   footer{
-    padding:70px 0 calc(60px + env(safe-area-inset-bottom,0px));
+
+    padding:
+      70px 0
+      calc(
+        60px +
+        env(safe-area-inset-bottom,0px)
+      );
+
   }
 
 
   .foot-meta{
+
     margin-top:0;
 
     color:var(--moon-500);
@@ -1450,6 +1794,7 @@
     font-size:12px;
 
     text-align:center;
+
   }
 
 
@@ -1457,6 +1802,7 @@
   /* ========================================
      MOBILE
   ======================================== */
+
 
   @media (max-width:600px){
 
@@ -1470,95 +1816,129 @@
         center,
         center,
         68% center;
+
     }
 
 
     .hero-sub{
+
       font-size:15px;
 
       max-width:32ch;
+
     }
 
 
     .hero-ctas{
+
       margin-top:34px;
+
     }
 
 
     .btn-primary,
     .btn-ghost{
+
       padding:14px 24px;
+
     }
 
 
     section{
+
       padding:72px 0;
+
     }
 
 
     .section-head{
+
       margin-bottom:38px;
+
     }
 
 
     .availability-head{
+
       max-width:none;
+
     }
 
 
     .availability-head .lead{
+
       max-width:none;
 
       line-height:1.9;
+
     }
 
 
     .reserve-head{
+
       max-width:none;
+
     }
 
 
     .reserve-head .lead{
+
       line-height:1.9;
+
     }
 
 
     .menu-row{
+
       gap:12px;
+
     }
 
 
     .menu-name{
+
       font-size:17px;
+
     }
 
 
     .menu-desc{
+
       font-size:12px;
+
     }
 
 
     .menu-price{
+
       font-size:17px;
+
     }
 
 
     .faq-item{
+
       padding:24px 0;
+
     }
 
 
     .faq-question{
+
       font-size:17px;
+
     }
 
 
     .faq-answer{
+
       font-size:14px;
+
     }
 
 
     .insta-card{
+
       padding:26px;
 
       flex-direction:column;
@@ -1566,28 +1946,36 @@
       align-items:stretch;
 
       gap:22px;
+
     }
 
 
     .insta-info{
+
       min-width:0;
+
     }
 
 
     .insta-account{
+
       justify-content:flex-start;
+
     }
 
 
     .insta-account a{
+
       width:100%;
+
     }
 
   }
 
-</style>
-</head>
 
+</style>
+
+</head>
 
 
 <body>
@@ -1596,6 +1984,7 @@
 <!-- ========================================
      NAV
 ======================================== -->
+
 
 <header class="nav">
 
@@ -1618,13 +2007,16 @@
         メニュー・料金
       </a>
 
+
       <a href="#flow">
         ご利用の流れ
       </a>
 
+
       <a href="#faq">
         よくある質問
       </a>
+
 
       <a href="#instagram">
         Instagram
@@ -1646,6 +2038,7 @@
 <!-- ========================================
      HERO
 ======================================== -->
+
 
 <section class="hero" id="top">
 
@@ -1674,12 +2067,18 @@
 
     <div class="hero-ctas">
 
-      <a class="btn-primary" href="#reserve">
+      <a
+        class="btn-primary"
+        href="#reserve"
+      >
         予約フォームへ
       </a>
 
 
-      <a class="btn-ghost" href="#menu">
+      <a
+        class="btn-ghost"
+        href="#menu"
+      >
         メニューを見る
       </a>
 
@@ -1694,6 +2093,7 @@
 <!-- ========================================
      MENU
 ======================================== -->
+
 
 <section id="menu">
 
@@ -1854,6 +2254,7 @@
      FLOW
 ======================================== -->
 
+
 <section id="flow">
 
   <div class="wrap">
@@ -1995,13 +2396,13 @@
      AVAILABILITY
 ======================================== -->
 
+
 <section id="availability">
 
   <div class="wrap">
 
 
     <div class="section-head availability-head">
-
 
       <div class="section-label">
         AVAILABILITY
@@ -2026,12 +2427,19 @@
     <div class="cal-card">
 
 
+      <!--
+        Google Sheetsから取得した
+        60日分の日付をここに表示
+      -->
+
       <div
         class="cal-dates"
         id="calDates"
       ></div>
 
 
+
+      <!-- 凡例 -->
 
       <div class="cal-legend">
 
@@ -2047,25 +2455,46 @@
 
         <span class="legend-item">
 
-          <i class="dot dot-buffer"></i>
-
-          前後確保中
-
-        </span>
-
-
-        <span class="legend-item">
-
           <i class="dot dot-booked"></i>
 
           予約済み
 
         </span>
 
+      </div>
+
+
+
+      <!-- 読み込み中 -->
+
+      <div
+        id="calendarLoading"
+        class="calendar-loading"
+      >
+
+        空き状況を読み込んでいます…
 
       </div>
 
 
+
+      <!-- エラー -->
+
+      <div
+        id="calendarError"
+        class="calendar-error"
+        style="display:none;"
+      >
+
+        空き状況を取得できませんでした。<br>
+
+        お手数ですが予約フォームよりお問い合わせください。
+
+      </div>
+
+
+
+      <!-- 時間枠 -->
 
       <div
         class="cal-slots"
@@ -2073,6 +2502,17 @@
       ></div>
 
 
+
+      <!-- 最終更新表示 -->
+
+      <div
+        class="calendar-updated"
+        id="calendarUpdated"
+      ></div>
+
+
+
+      <!-- 営業時間 -->
 
       <div class="cal-hours-note">
 
@@ -2107,46 +2547,6 @@
       </div>
 
 
-
-      <div
-        id="ownerPanel"
-        class="owner-panel"
-        style="display:none;"
-      >
-
-
-        <p class="owner-hint">
-
-          タップして空き状況を切り替えられます
-          （この編集画面はあなただけに表示されています）。
-
-        </p>
-
-
-        <div class="owner-actions">
-
-
-          <button
-            type="button"
-            class="btn-small"
-            id="publishCalBtn"
-          >
-
-            この内容を公開する
-
-          </button>
-
-
-          <span
-            id="publishStatus"
-            class="publish-status"
-          ></span>
-
-
-        </div>
-
-      </div>
-
     </div>
 
   </div>
@@ -2155,94 +2555,466 @@
 
 
 
-<script
-  type="application/json"
-  id="cal-data-raw"
->__CAL_DATA_JSON__</script>
-
+<!-- ========================================
+     PUBLIC CALENDAR
+     Google Apps Script JSONP
+======================================== -->
 
 
 <script>
 
-(function(){
+
+/*
+ * Google Apps Script Web App
+ *
+ * Google Sheets
+ *   ↓
+ * Apps Script
+ *   ↓
+ * JSONP
+ *   ↓
+ * GitHub Pages
+ *
+ */
+
+
+const YUMEYA_CALENDAR_API =
+  'https://script.google.com/macros/s/AKfycbzzgD6kfP78q22o8gh-FoGO9dMinReilCRky74e4XCox8XTVkxqFZF4fOUO2sI250Gnng/exec';
+
+
+
+/* ========================================
+   曜日ごとの営業開始時間
+======================================== */
+
+
+const YUMEYA_START_HOURS = {
+
+  0:20,
+
+  1:23,
+
+  2:23,
+
+  3:21,
+
+  4:23,
+
+  5:23,
+
+  6:10
+
+};
+
+
+
+/* ========================================
+   終了時間
+======================================== */
+
+
+const YUMEYA_END_MINUTES =
+  24 * 60 + 3 * 60;
+
+
+
+/* ========================================
+   公開カレンダーデータ
+======================================== */
+
+
+let yumeyaCalendarData = {
+
+  booked:{}
+
+};
+
+
+
+let yumeyaSelectedDate = '';
+
+
+
+/* ========================================
+   JSONPでGoogle Apps Scriptを取得
+======================================== */
+
+
+function loadYumeyaCalendar(){
+
+  const loading =
+    document.getElementById(
+      'calendarLoading'
+    );
+
+
+  const error =
+    document.getElementById(
+      'calendarError'
+    );
+
+
+  const updated =
+    document.getElementById(
+      'calendarUpdated'
+    );
+
+
+  if(loading){
+
+    loading.style.display =
+      'block';
+
+  }
+
+
+  if(error){
+
+    error.style.display =
+      'none';
+
+  }
+
+
+  if(updated){
+
+    updated.textContent =
+      '';
+
+  }
+
 
 
   /*
-   * 曜日ごとの予約可能時間
-   *
-   * 0 = 日曜日
-   * 1 = 月曜日
-   * 2 = 火曜日
-   * 3 = 水曜日
-   * 4 = 木曜日
-   * 5 = 金曜日
-   * 6 = 土曜日
-   *
-   * 30分刻みで表示。
-   *
-   * 例：
-   * 日曜日 → 20:00 ～ 3:00
-   * 月曜日 → 23:00 ～ 3:00
-   * 土曜日 → 10:00 ～ 3:00
+   * JSONPのコールバック名
    */
 
-  const DAY_START_HOURS = {
-
-    0: 20,
-    1: 23,
-    2: 23,
-    3: 21,
-    4: 23,
-    5: 23,
-    6: 10
-
-  };
+  const callbackName =
+    'yumeyaCalendarCallback_' +
+    Date.now();
 
 
-  const END_HOUR = 3;
+
+  /*
+   * Google Apps Scriptから
+   * 呼ばれる関数
+   */
+
+  window[callbackName] =
+    function(data){
+
+      try{
+
+        if(
+          !data ||
+          typeof data !== 'object'
+        ){
+
+          throw new Error(
+            'カレンダーデータが不正です。'
+          );
+
+        }
 
 
-  const BUFFER_STEPS = 2;
+        if(
+          !data.booked ||
+          typeof data.booked !== 'object'
+        ){
+
+          data.booked = {};
+
+        }
 
 
-  let calData;
+        yumeyaCalendarData =
+          data;
 
 
-  try{
+        if(loading){
 
-    calData = JSON.parse(
-      document.getElementById(
-        'cal-data-raw'
-      ).textContent
+          loading.style.display =
+            'none';
+
+        }
+
+
+        renderYumeyaCalendar();
+
+
+        if(updated){
+
+          const now =
+            new Date();
+
+
+          updated.textContent =
+            '最終取得：' +
+            now.getHours()
+              .toString()
+              .padStart(2,'0') +
+            ':' +
+            now.getMinutes()
+              .toString()
+              .padStart(2,'0');
+
+        }
+
+
+      }catch(errorObject){
+
+        showYumeyaCalendarError();
+
+      }
+
+
+      delete window[callbackName];
+
+      if(script){
+
+        script.remove();
+
+      }
+
+    };
+
+
+
+  /*
+   * Google Apps Scriptへアクセス
+   */
+
+  const script =
+    document.createElement(
+      'script'
     );
 
-  }catch(e){
 
-    calData = {
-      booked:{}
+  script.src =
+    YUMEYA_CALENDAR_API +
+    '?action=calendar' +
+    '&callback=' +
+    callbackName;
+
+
+
+  script.onerror =
+    function(){
+
+      showYumeyaCalendarError();
+
+
+      delete window[callbackName];
+
+      script.remove();
+
     };
+
+
+  document.body.appendChild(
+    script
+  );
+
+}
+
+
+
+/* ========================================
+   カレンダー取得エラー
+======================================== */
+
+
+function showYumeyaCalendarError(){
+
+  const loading =
+    document.getElementById(
+      'calendarLoading'
+    );
+
+
+  const error =
+    document.getElementById(
+      'calendarError'
+    );
+
+
+  if(loading){
+
+    loading.style.display =
+      'none';
 
   }
 
 
-  if(
-    !calData ||
-    typeof calData !== 'object'
+  if(error){
+
+    error.style.display =
+      'block';
+
+  }
+
+}
+
+
+
+/* ========================================
+   日付キー作成
+======================================== */
+
+
+function yumeyaDateKey(date){
+
+  return (
+
+    date.getFullYear() +
+
+    '-' +
+
+    String(
+      date.getMonth() + 1
+    ).padStart(2,'0') +
+
+    '-' +
+
+    String(
+      date.getDate()
+    ).padStart(2,'0')
+
+  );
+
+}
+
+
+
+/* ========================================
+   日付表示
+======================================== */
+
+
+function yumeyaDateLabel(date){
+
+  const weekdays = [
+
+    '日',
+    '月',
+    '火',
+    '水',
+    '木',
+    '金',
+    '土'
+
+  ];
+
+
+  return (
+
+    (date.getMonth() + 1) +
+
+    '/' +
+
+    date.getDate() +
+
+    '(' +
+
+    weekdays[
+      date.getDay()
+    ] +
+
+    ')'
+
+  );
+
+}
+
+
+
+/* ========================================
+   時間枠生成
+======================================== */
+
+
+function createYumeyaTimeSlots(
+  startHour
+){
+
+  const result = [];
+
+
+  let currentMinutes =
+    startHour * 60;
+
+
+  while(
+    currentMinutes <
+    YUMEYA_END_MINUTES
   ){
 
-    calData = {
-      booked:{}
-    };
+    const displayMinutes =
+      currentMinutes %
+      (24 * 60);
+
+
+    const hour =
+      Math.floor(
+        displayMinutes / 60
+      );
+
+
+    const minute =
+      displayMinutes % 60;
+
+
+    const time =
+
+      String(hour)
+        .padStart(2,'0') +
+
+      ':' +
+
+      String(minute)
+        .padStart(2,'0');
+
+
+    result.push(
+      time
+    );
+
+
+    currentMinutes +=
+      30;
 
   }
 
 
-  if(!calData.booked){
+  return result;
 
-    calData.booked = {};
+}
 
-  }
 
+
+/* ========================================
+   営業開始時間
+======================================== */
+
+
+function getYumeyaStartHour(
+  weekday
+){
+
+  return YUMEYA_START_HOURS[
+    weekday
+  ];
+
+}
+
+
+
+/* ========================================
+   日付一覧表示
+======================================== */
+
+
+function renderYumeyaCalendar(){
 
   const datesEl =
     document.getElementById(
@@ -2256,616 +3028,270 @@
     );
 
 
-  const ownerPanel =
-    document.getElementById(
-      'ownerPanel'
-    );
-
-
-  const publishBtn =
-    document.getElementById(
-      'publishCalBtn'
-    );
-
-
-  const publishStatus =
-    document.getElementById(
-      'publishStatus'
-    );
-
-
-  const DAYS_AHEAD = 21;
-
-
-  const dateList = [];
-
-
-  const base = new Date();
-
-
-  base.setHours(
-    0,
-    0,
-    0,
-    0
-  );
-
-
-  for(
-    let i = 0;
-    i < DAYS_AHEAD;
-    i++
+  if(
+    !datesEl ||
+    !slotsEl
   ){
 
-    const d =
-      new Date(base);
-
-
-    d.setDate(
-      base.getDate() + i
-    );
-
-
-    dateList.push(d);
+    return;
 
   }
 
 
-  function fmtKey(d){
+  datesEl.innerHTML =
+    '';
 
-    return d.getFullYear()
-      + '-'
-      + String(
-          d.getMonth()+1
-        ).padStart(2,'0')
-      + '-'
-      + String(
-          d.getDate()
-        ).padStart(2,'0');
+  slotsEl.innerHTML =
+    '';
 
-  }
-
-
-  function fmtLabel(d){
-
-    const w =
-      [
-        '日',
-        '月',
-        '火',
-        '水',
-        '木',
-        '金',
-        '土'
-      ][d.getDay()];
-
-
-    return (
-      d.getMonth()+1
-    )
-    + '/'
-    + d.getDate()
-    + '('
-    + w
-    + ')';
-
-  }
 
 
   /*
-   * 指定した曜日の予約可能時間を
-   * 30分刻みで作成する。
-   *
-   * 0:00〜3:00は、日付をまたいだ後の時間。
-   * カレンダー上では「選択した日の営業時間」として表示する。
+   * Apps Scriptから取得した
+   * 60日分の日付
    */
 
-  function getTimeSlots(d){
-
-    const startHour =
-      DAY_START_HOURS[
-        d.getDay()
-      ];
+  const dateKeys =
+    Object.keys(
+      yumeyaCalendarData.booked || {}
+    ).sort();
 
 
-    const slots = [];
 
-
-    let currentMinutes =
-      startHour * 60;
-
-
-    const endMinutes =
-      (END_HOUR + 24) * 60;
-
-
-    while(
-      currentMinutes <= endMinutes
-    ){
-
-      const displayMinutes =
-        currentMinutes % (24 * 60);
-
-
-      const hour =
-        Math.floor(
-          displayMinutes / 60
-        );
-
-
-      const minute =
-        displayMinutes % 60;
-
-
-      slots.push(
-        String(hour)
-          + ':'
-          + String(minute)
-              .padStart(2,'0')
-      );
-
-
-      currentMinutes += 30;
-
-    }
-
-
-    return slots;
-
-  }
-
-
-  let selectedKey =
-    fmtKey(
-      dateList[0]
-    );
-
-
-  let isOwner = false;
-
-
-  function getSelectedDate(){
-
-    for(
-      let i = 0;
-      i < dateList.length;
-      i++
-    ){
-
-      if(
-        fmtKey(
-          dateList[i]
-        ) === selectedKey
-      ){
-
-        return dateList[i];
-
-      }
-
-    }
-
-
-    return dateList[0];
-
-  }
-
-
-  function statusFor(
-    key,
-    idx
+  if(
+    dateKeys.length === 0
   ){
 
-    const booked =
-      calData.booked[key] || [];
+    showYumeyaCalendarError();
 
-
-    if(
-      booked.indexOf(idx) !== -1
-    ){
-
-      return 'booked';
-
-    }
-
-
-    for(
-      let i = 0;
-      i < booked.length;
-      i++
-    ){
-
-      if(
-        Math.abs(
-          booked[i] - idx
-        ) <= BUFFER_STEPS
-      ){
-
-        return 'buffer';
-
-      }
-
-    }
-
-
-    return 'open';
+    return;
 
   }
 
 
-  function renderDates(){
 
-    datesEl.innerHTML = '';
+  /*
+   * 最初の日付を選択
+   */
 
+  if(
+    !yumeyaSelectedDate ||
+    dateKeys.indexOf(
+      yumeyaSelectedDate
+    ) === -1
+  ){
 
-    dateList.forEach(
-      function(d){
+    yumeyaSelectedDate =
+      dateKeys[0];
 
-        const key =
-          fmtKey(d);
-
-
-        const btn =
-          document.createElement(
-            'button'
-          );
-
-
-        btn.type =
-          'button';
+  }
 
 
-        btn.className =
-          'cal-date-btn'
-          +
-          (
-            key === selectedKey
-              ? ' active'
-              : ''
-          );
 
+  /*
+   * 日付ボタン生成
+   */
 
-        btn.textContent =
-          fmtLabel(d);
+  dateKeys.forEach(
+    function(dateKey){
 
-
-        btn.addEventListener(
-          'click',
-          function(){
-
-            selectedKey =
-              key;
-
-
-            renderDates();
-
-            renderSlots();
-
-          }
+      const date =
+        new Date(
+          dateKey +
+          'T00:00:00'
         );
 
 
-        datesEl.appendChild(btn);
+      const button =
+        document.createElement(
+          'button'
+        );
+
+
+      button.type =
+        'button';
+
+
+      button.className =
+        'cal-date-btn';
+
+
+      if(
+        dateKey ===
+        yumeyaSelectedDate
+      ){
+
+        button.classList.add(
+          'active'
+        );
 
       }
+
+
+      button.textContent =
+        yumeyaDateLabel(
+          date
+        );
+
+
+      button.addEventListener(
+        'click',
+        function(){
+
+          yumeyaSelectedDate =
+            dateKey;
+
+
+          renderYumeyaCalendar();
+
+        }
+      );
+
+
+      datesEl.appendChild(
+        button
+      );
+
+    }
+  );
+
+
+
+  renderYumeyaSlots();
+
+}
+
+
+
+/* ========================================
+   時間枠表示
+======================================== */
+
+
+function renderYumeyaSlots(){
+
+  const slotsEl =
+    document.getElementById(
+      'calSlots'
     );
+
+
+  if(!slotsEl){
+
+    return;
 
   }
 
 
-  function renderSlots(){
-
-    slotsEl.innerHTML = '';
-
-
-    const selectedDate =
-      getSelectedDate();
+  slotsEl.innerHTML =
+    '';
 
 
-    const TIME_SLOTS =
-      getTimeSlots(
-        selectedDate
-      );
+
+  if(!yumeyaSelectedDate){
+
+    return;
+
+  }
 
 
-    TIME_SLOTS.forEach(
-      function(t,idx){
 
-        const st =
-          statusFor(
-            selectedKey,
-            idx
-          );
+  const selectedDate =
+    new Date(
+      yumeyaSelectedDate +
+      'T00:00:00'
+    );
 
 
-        const chip =
-          document.createElement(
-            'button'
-          );
+  const weekday =
+    selectedDate.getDay();
 
 
-        chip.type =
-          'button';
+  const startHour =
+    getYumeyaStartHour(
+      weekday
+    );
 
+
+  const timeSlots =
+    createYumeyaTimeSlots(
+      startHour
+    );
+
+
+
+  /*
+   * Google Sheetsの
+   * 「×」になっている時間
+   */
+
+  const booked =
+    yumeyaCalendarData.booked[
+      yumeyaSelectedDate
+    ] || [];
+
+
+
+  timeSlots.forEach(
+    function(time){
+
+      const chip =
+        document.createElement(
+          'div'
+        );
+
+
+      const isBooked =
+        booked.indexOf(
+          time
+        ) !== -1;
+
+
+
+      if(isBooked){
 
         chip.className =
-          'slot-chip slot-' + st;
-
+          'slot-chip slot-booked';
 
         chip.textContent =
-          t;
+          time + '　予約済み';
 
+      }else{
 
-        chip.disabled =
-          !isOwner;
+        chip.className =
+          'slot-chip slot-open';
 
-
-        if(isOwner){
-
-          chip.addEventListener(
-            'click',
-            function(){
-
-              toggleSlot(
-                selectedKey,
-                idx
-              );
-
-            }
-          );
-
-        }
-
-
-        slotsEl.appendChild(
-          chip
-        );
+        chip.textContent =
+          time + '　空きあり';
 
       }
-    );
-
-  }
 
 
-  function toggleSlot(
-    key,
-    idx
-  ){
-
-    if(
-      !calData.booked[key]
-    ){
-
-      calData.booked[key] = [];
+      slotsEl.appendChild(
+        chip
+      );
 
     }
+  );
+
+}
 
 
-    const arr =
-      calData.booked[key];
+
+/* ========================================
+   初期化
+======================================== */
 
 
-    const pos =
-      arr.indexOf(idx);
+document.addEventListener(
+  'DOMContentLoaded',
+  function(){
 
-
-    if(pos >= 0){
-
-      arr.splice(
-        pos,
-        1
-      );
-
-    }else{
-
-      arr.push(idx);
-
-    }
-
-
-    if(
-      arr.length === 0
-    ){
-
-      delete calData.booked[key];
-
-    }
-
-
-    renderSlots();
-
-
-    if(publishStatus){
-
-      publishStatus.textContent =
-        '未公開の変更があります';
-
-    }
+    loadYumeyaCalendar();
 
   }
+);
 
-
-  function escLit(s){
-
-    return s
-      .replace(
-        /\\/g,
-        '\\\\'
-      )
-      .replace(
-        /`/g,
-        '\\`'
-      )
-      .replace(
-        /\$\{/g,
-        '\\${'
-      );
-
-  }
-
-
-  let PAGE_TEMPLATE = '';
-
-
-  function buildDoc(newData){
-
-    const dataStr =
-      JSON.stringify(
-        newData
-      );
-
-
-    let out =
-      PAGE_TEMPLATE;
-
-
-    out =
-      out.replace(
-        '__CAL_DATA_JSON__',
-        function(){
-
-          return dataStr;
-
-        }
-      );
-
-
-    out =
-      out.replace(
-        '__PAGE_TEMPLATE_SELF__',
-        function(){
-
-          return escLit(
-            PAGE_TEMPLATE
-          );
-
-        }
-      );
-
-
-    return out;
-
-  }
-
-
-  async function initOwnerMode(){
-
-    try{
-
-      if(
-        window.claude
-        &&
-        typeof window.claude.use === 'function'
-      ){
-
-        const user =
-          await window.claude.use(
-            'user'
-          );
-
-
-        if(
-          user
-          &&
-          typeof user.isOwner === 'function'
-          &&
-          user.isOwner()
-        ){
-
-          isOwner = true;
-
-
-          ownerPanel.style.display =
-            'block';
-
-        }
-
-      }
-
-    }catch(e){}
-
-
-    renderSlots();
-
-  }
-
-
-  if(publishBtn){
-
-    publishBtn.addEventListener(
-      'click',
-      async function(){
-
-        publishStatus.textContent =
-          '公開中…';
-
-
-        try{
-
-          if(
-            !window.claude
-            ||
-            typeof window.claude.use !== 'function'
-          ){
-
-            publishStatus.textContent =
-              '公開機能が利用できません';
-
-            return;
-
-          }
-
-
-          const artifactCap =
-            await window.claude.use(
-              'artifact'
-            );
-
-
-          if(!artifactCap){
-
-            publishStatus.textContent =
-              '公開機能が利用できません';
-
-            return;
-
-          }
-
-
-          const html =
-            buildDoc(
-              calData
-            );
-
-
-          await artifactCap.publish(
-            html
-          );
-
-
-          publishStatus.textContent =
-            '公開しました';
-
-
-        }catch(e){
-
-          publishStatus.textContent =
-            '公開に失敗しました。\nもう一度お試しください。';
-
-        }
-
-      }
-    );
-
-  }
-
-
-  renderDates();
-
-  renderSlots();
-
-  initOwnerMode();
-
-})();
 
 </script>
 
@@ -2874,6 +3300,7 @@
 <!-- ========================================
      FAQ
 ======================================== -->
+
 
 <section id="faq">
 
@@ -2905,8 +3332,6 @@
     <div class="faq-list">
 
 
-      <!-- Q1 -->
-
       <div class="faq-item">
 
         <h3 class="faq-question">
@@ -2923,8 +3348,6 @@
       </div>
 
 
-
-      <!-- Q2 -->
 
       <div class="faq-item">
 
@@ -2945,8 +3368,6 @@
 
 
 
-      <!-- Q3 -->
-
       <div class="faq-item">
 
         <h3 class="faq-question">
@@ -2963,8 +3384,6 @@
       </div>
 
 
-
-      <!-- Q4 -->
 
       <div class="faq-item">
 
@@ -3003,6 +3422,7 @@
 <!-- ========================================
      INSTAGRAM
 ======================================== -->
+
 
 <section id="instagram">
 
@@ -3055,6 +3475,7 @@
 <!-- ========================================
      RESERVATION
 ======================================== -->
+
 
 <section id="reserve">
 
@@ -3175,6 +3596,7 @@
      FOOTER
 ======================================== -->
 
+
 <footer>
 
   <div class="wrap">
@@ -3192,4 +3614,5 @@
 
 
 </body>
+
 </html>
