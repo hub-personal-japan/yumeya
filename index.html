@@ -584,8 +584,18 @@
 
   }
 
+
+  /*
+   * メニュー説明文
+   *
+   * PCでは各文章を指定した3行で表示。
+   * スマホでは画面幅に合わせて自然に折り返す。
+   */
+
   .menu-lead span{
-    white-space:nowrap;
+
+    white-space:normal;
+
   }
 
 
@@ -1408,23 +1418,23 @@
 
   .slot-chip{
 
-  padding:11px 6px;
+    padding:11px 6px;
 
-  border-radius:3px;
+    border-radius:3px;
 
-  font-family:var(--sans);
+    font-family:var(--sans);
 
-  font-size:13px;
+    font-size:13px;
 
-  border:1px solid var(--line);
+    border:1px solid var(--line);
 
-  cursor:default;
+    cursor:default;
 
-  white-space:nowrap;
+    white-space:nowrap;
 
-  text-align:center;
+    text-align:center;
 
-}
+  }
 
 
   .slot-open{
@@ -1513,42 +1523,42 @@
   }
 
 
- @media (max-width:600px){
+  @media (max-width:600px){
 
-  .cal-card{
+    .cal-card{
 
-    padding:20px;
+      padding:20px;
+
+    }
+
+
+    .cal-slots{
+
+      grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+    .slot-chip{
+
+      white-space:nowrap;
+
+      font-size:13px;
+
+    }
+
+
+    .cal-date-btn{
+
+      min-width:78px;
+
+      padding:9px 10px;
+
+      font-size:12px;
+
+    }
 
   }
-
-
-  .cal-slots{
-
-    grid-template-columns:repeat(2,1fr);
-
-  }
-
-
-  .slot-chip{
-
-    white-space:nowrap;
-
-    font-size:13px;
-
-  }
-
-
-  .cal-date-btn{
-
-    min-width:78px;
-
-    padding:9px 10px;
-
-    font-size:12px;
-
-  }
-
-}
 
 
 
@@ -1901,6 +1911,18 @@
     .reserve-head .lead{
 
       line-height:1.9;
+
+    }
+
+
+    /*
+     * メニュー説明文はスマホでは
+     * 画面幅に合わせて自然に改行
+     */
+
+    .menu-lead span{
+
+      white-space:normal;
 
     }
 
