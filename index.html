@@ -1404,19 +1404,23 @@
 
   .slot-chip{
 
-    padding:11px 6px;
+  padding:11px 6px;
 
-    border-radius:3px;
+  border-radius:3px;
 
-    font-family:var(--sans);
+  font-family:var(--sans);
 
-    font-size:13px;
+  font-size:13px;
 
-    border:1px solid var(--line);
+  border:1px solid var(--line);
 
-    cursor:default;
+  cursor:default;
 
-  }
+  white-space:nowrap;
+
+  text-align:center;
+
+}
 
 
   .slot-open{
@@ -1505,33 +1509,42 @@
   }
 
 
-  @media (max-width:600px){
+ @media (max-width:600px){
 
-    .cal-card{
+  .cal-card{
 
-      padding:20px;
-
-    }
-
-
-    .cal-slots{
-
-      grid-template-columns:repeat(3,1fr);
-
-    }
-
-
-    .cal-date-btn{
-
-      min-width:78px;
-
-      padding:9px 10px;
-
-      font-size:12px;
-
-    }
+    padding:20px;
 
   }
+
+
+  .cal-slots{
+
+    grid-template-columns:repeat(2,1fr);
+
+  }
+
+
+  .slot-chip{
+
+    white-space:nowrap;
+
+    font-size:13px;
+
+  }
+
+
+  .cal-date-btn{
+
+    min-width:78px;
+
+    padding:9px 10px;
+
+    font-size:12px;
+
+  }
+
+}
 
 
 
@@ -3415,8 +3428,7 @@ document.addEventListener(
 
     <p class="faq-note">
 
-      その他、ご不明な点がございましたら、
-      ご予約フォームの備考欄よりお気軽にお問い合わせください。
+      その他、ご不明な点がございましたら、InstagramのDM、もしくはご予約フォームの備考欄よりお気軽にお問い合わせください。
 
     </p>
 
@@ -3504,9 +3516,9 @@ document.addEventListener(
 
       <p class="lead">
 
-        下のフォームより必要事項をご入力ください。
-        送信いただいた内容は仮予約となります。
-        折り返し確定のご連絡をお送りしますので、
+        下のフォームより必要事項をご入力ください。<br>
+        送信いただいた内容は仮予約となります。<br>
+        折り返し確定のご連絡をお送りしますので、<br>
         今しばらくお待ちください。
 
       </p>
