@@ -493,7 +493,8 @@
   }
 
 
-  section + section{
+  section + section,
+  section + script + section{
 
     border-top:1px solid var(--line);
 
@@ -1740,6 +1741,15 @@
   /* ========================================
      INSTAGRAM
   ======================================== */
+
+
+  .instagram-head{
+
+    margin-bottom:24px;
+
+    max-width:none;
+
+  }
 
 
   .insta-card{
@@ -3521,23 +3531,11 @@ document.addEventListener(
   <div class="wrap">
 
 
-    <div class="section-head">
+    <div class="instagram-head">
 
       <div class="section-label">
         INSTAGRAM
       </div>
-
-
-      <h2>
-        Instagram
-      </h2>
-
-
-      <p class="lead">
-
-        日々の空き状況・お知らせはこちらから
-
-      </p>
 
     </div>
 
