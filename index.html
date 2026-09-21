@@ -2949,19 +2949,26 @@ function createYumeyaTimeSlots(
     YUMEYA_END_MINUTES
   ){
 
-    const displayMinutes =
-      currentMinutes %
-      (24 * 60);
-
+    /*
+     * 営業開始日を基準にした
+     * 24時間超の表示にする
+     *
+     * 00:00 → 24:00
+     * 00:30 → 24:30
+     * 01:00 → 25:00
+     * 01:30 → 25:30
+     * 02:00 → 26:00
+     * 02:30 → 26:30
+     */
 
     const hour =
       Math.floor(
-        displayMinutes / 60
+        currentMinutes / 60
       );
 
 
     const minute =
-      displayMinutes % 60;
+      currentMinutes % 60;
 
 
     const time =
